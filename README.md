@@ -1,1 +1,1 @@
-# 07.14_linuxs
+# study_linuxs
