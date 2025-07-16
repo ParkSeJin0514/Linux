@@ -37,25 +37,28 @@ touch ~/practice/project/tests/test_main.py
 
 - helper.py 파일 생성
 ```
-[parksejin@localhost project]$ touch ~/practice/project/src/utils/helper.py
+[parksejin@localhost main]$ touch ../utils/helper.py
 ```
 - README.md 파일 생성
 ```
-[parksejin@localhost project]$ touch ~/practice/project/README.md
+[parksejin@localhost main]$ touch ../../README.md
 ```
 - manual.txt 파일 생성
 ```
-[parksejin@localhost project]$ touch ~/practice/project/docs/user/manual.txt
+[parksejin@localhost main]$ touch ../../docs/user/manual.txt
 ```
 - settings.conf 파일 생성
 ```
-[parksejin@localhost project]$touch ~/practice/project/config/settings.conf
+[parksejin@localhost main]$touch ../../config/settings.conf
 ```
 ### 1-2. 상대 주소 검증
 - 위에서 작성한 상대 주소가 정확한지 다음 명령어로 확인하시오.
 ```
 cd ~/practice/project/src/main/
-ls [상대주소]
+ls ../utils/helper.py
+ls ../../README.md
+ls ../../docs/user/manual.txt
+ls ../../config/settings.conf
 ```
 
 ## 📁 연습문제 2 : 다양한 시작점에서의 상대 주소
@@ -89,8 +92,7 @@ ls [상대주소]
 
 ## 📁 연습문제 3 : 파일 내용 확인 및 조작
 ### 3-1. 상대 주소를 이용한 파일 내용 출력
-- 현재 위치가 ~/practice/project/src/utils/일 때,
-프로젝트 루트의 README.md 파일 내용을 출력하시오.
+- 현재 위치가 ~/practice/project/src/utils/일 때, 프로젝트 루트의 README.md 파일 내용을 출력하시오.
 ```
 touch ~/practice/project/README.md
 ```
@@ -103,8 +105,7 @@ touch ~/practice/project/README.md
 touch ~/practice/project/config/settings.conf
 ```
 ### 3-2. 상대 주소를 이용한 파일 생성
-- 현재 위치가 ~/practice/project/src/main/일 때,
-현재 디렉토리에 config.py 파일을 생성하고 "# Configuration module"이라는 내용을 작성하시오.
+- 현재 위치가 ~/practice/project/src/main/일 때, 현재 디렉토리에 config.py 파일을 생성하고 "# Configuration module"이라는 내용을 작성하시오.
 ```
 touch ~/practice/project/config/settings.conf
 ```
@@ -115,8 +116,7 @@ touch ~/practice/project/config/settings.conf
 
 ## 📁 연습문제 4 : 파일 복사 및 이동
 ### 4-1. 상대 주소를 이용한 파일 복사
-- 현재 위치가 ~/practice/project/docs/dev/일 때,
-api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.
+- 현재 위치가 ~/practice/project/docs/dev/일 때, api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.
 ```
 [parksejin@localhost dev]$ cp api.md ../user/api_copy.md
 ```
@@ -129,8 +129,7 @@ api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.
 [parksejin@localhost dev]$ cp ../../config/settings.conf ../../tests/unit/
 ```
 ### 4-2. 상대 주소를 이용한 파일 이동
-- 현재 위치가 ~/practice/project/tests/일 때,
-test_main.py 파일을 tests/unit/ 디렉토리로 이동하시오.
+- 현재 위치가 ~/practice/project/tests/일 때, test_main.py 파일을 tests/unit/ 디렉토리로 이동하시오.
 ```
 [parksejin@localhost tests]$ mv test_main.py unit/
 ```
@@ -141,8 +140,7 @@ test_main.py 파일을 tests/unit/ 디렉토리로 이동하시오.
 
 ## 📁 연습문제 5: 복합 상대 주소 활용
 ### 5-1. 다중 파일 조작
-- 현재 위치가 ~/practice/project/일 때,
-src/main/ 디렉토리의 모든 파일을 docs/dev/ 디렉토리에 복사하시오.
+- 현재 위치가 ~/practice/project/일 때, src/main/ 디렉토리의 모든 파일을 docs/dev/ 디렉토리에 복사하시오.
 ```
 [parksejin@localhost project]$ cp -r src/main/ docs/dev/
 ```
@@ -224,8 +222,7 @@ A : [parksejin@localhost unit]$ cat ../../README.md
 [parksejin@localhost project]$ cp config/* src/
 ```
 ### 7-2. 백업 및 정리
-- 현재 위치가 ~/practice/project/src/main/일 때,
-- 전체 프로젝트를 ../../project_backup/으로 복사하시오.
+- 현재 위치가 ~/practice/project/src/main/일 때, 전체 프로젝트를 ../../project_backup/으로 복사하시오.
 ```
 [parksejin@localhost main]$ cp -r  ../../* ../../project_backup/
 ```
