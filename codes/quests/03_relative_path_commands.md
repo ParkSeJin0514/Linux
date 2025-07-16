@@ -55,10 +55,10 @@ touch ~/practice/project/tests/test_main.py
 - 위에서 작성한 상대 주소가 정확한지 다음 명령어로 확인하시오.
 ```
 cd ~/practice/project/src/main/
-ls ../utils/helper.py
-ls ../../README.md
-ls ../../docs/user/manual.txt
-ls ../../config/settings.conf
+ls ../utils/
+ls ../../
+ls ../../docs/user/
+ls ../../config/
 ```
 
 ## 📁 연습문제 2 : 다양한 시작점에서의 상대 주소
