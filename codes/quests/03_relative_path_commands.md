@@ -77,7 +77,7 @@ ls ../../config/settings.conf
 ```
 
 ### 2-2. 역방향 상대 주소
-- 현재 위치가 ~/practice/project/tests/unit/일 때, 프로젝트 루트(~/practice/project/)로 이동하는 상대 주소를 작성하시오.
+- 현재 위치가 ~/practice/project/tests/unit/일 때, 프로젝트 루트로 이동하는 상대 주소를 작성하시오.
 ```
 [parksejin@localhost unit]$ cd ../../
 ```
