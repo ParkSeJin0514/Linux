@@ -1,4 +1,4 @@
-# Study_Linux
+# Linux
 ## PowerShell (GUI & CLI)
 - Searching Commands : [찾기 명령어](codes/powershell_01.sh)
 - Making Directory Commands : [만드는 명령어](codes/powershell_01.sh)
