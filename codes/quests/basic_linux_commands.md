@@ -11,7 +11,7 @@ PS C:\Develops\Quests> pwd
 
 ### **문제 1-2: 폴더 구조 만들기**
 
-**다음 폴더 구조를 생성하세요:**
+**다음 폴더 구조를 생성하세요**
 
 **powershell_practice/** 
 ```
