@@ -114,7 +114,12 @@ practice/
 [parksejin@localhost practice]$ mkdir my_project
 ```
 - 하위에 src/, docs/, tests/, config/ 디렉터리 생성
-src/ 디렉터리에 main.py 파일 생성 (내용: "# Main Python File")
+```
+[parksejin@localhost my_project]$ mkdir src docs tests config
+```
+- src/ 디렉터리에 main.py 파일 생성
+```
+(내용: "# Main Python File")
 ```
 [parksejin@localhost my_project]$ echo "# Main Python File" > src/main.py
 ```
