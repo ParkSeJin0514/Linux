@@ -1,4 +1,4 @@
-# Linux 파일 관리 명령어 와일드카드 실습 문제
+# 📁 Linux 파일 관리 명령어 와일드카드 실습 문제
 ## 실습 환경 설정
 
 - 실습 디렉터리 생성
@@ -26,7 +26,7 @@ ls -l
 ```
 mkdir archives backup logs images documents scripts
 ```
-## 1. mkdir 명령어 와일드카드 실습
+## 📁 1. mkdir 명령어 와일드카드 실습
 ### 1-1. 연도별 백업 디렉터리 생성
 -  2020년부터 2024년까지 백업 디렉터리를 한 번에 생성하세요
 -  예: backup_2020, backup_2021, backup_2022, backup_2023, backup_2024
@@ -56,7 +56,7 @@ mkdir archives backup logs images documents scripts
 [parksejin@localhost wildcard_file_practice]$ mkdir -p data/2024/{01..03} && \
 > ls -l data/2024/
 ```
-## 2. cp 명령어 와일드카드 실습
+## 📁 2. cp 명령어 와일드카드 실습
 ### 2-1. 확장자별 파일 복사
 - 모든 .txt 파일을 backup 디렉터리로 복사하세요
 ```
@@ -90,7 +90,7 @@ mkdir archives backup logs images documents scripts
 [parksejin@localhost wildcard_file_practice]$ cp log_*.txt logs/ && \
 > ls -l logs/
 ```
-## 3. mv 명령어 와일드카드 실습
+## 📁 3. mv 명령어 와일드카드 실습
 ### 3-1. 임시 파일 이동
 - 모든 .tmp 파일을 temp 디렉터리로 이동하세요 (mkdir temp 먼저 실행)
 ```
@@ -125,7 +125,7 @@ mkdir archives backup logs images documents scripts
 [parksejin@localhost wildcard_file_practice]$ mv {old,new}_* archives/ && \
 > ls -l archives/
 ```
-## 4. rm 명령어 와일드카드 실습
+## 📁 4. rm 명령어 와일드카드 실습
 ### 4-1. 임시 파일 삭제
 - 모든 .tmp 파일을 삭제하세요 (주의: 실제로는 신중히 실행)
 ```
@@ -151,7 +151,7 @@ mkdir archives backup logs images documents scripts
 [parksejin@localhost wildcard_file_practice]$ rm -r !(*.???) && \
 > ls -l
 ```
-## 5. 복합 명령어 실습
+## 📁 5. 복합 명령어 실습
 ### 5-1. 파일 정리 시스템
 - 1단계: 모든 이미지 파일(.jpg, .png, .gif)을 images 디렉터리로 이동
 ```
@@ -198,7 +198,7 @@ mkdir archives backup logs images documents scripts
 > ls -l ./logs/access && \
 > ls -l ./logs/system
 ```
-## 6. 고급 와일드카드 실습
+## 📁6. 고급 와일드카드 실습
 ### 6-1. 복잡한 패턴 매칭
 - "report" 또는 "data"로 시작하고 숫자가 포함된 모든 파일을 찾아서 processed 디렉터리로 복사하세요
 ```
@@ -220,7 +220,7 @@ mkdir archives backup logs images documents scripts
 > mv *[000..009]* single_digit/ && \
 > ls -l
 ```
-## 7. 실전 시나리오 문제
+## 📁 7. 실전 시나리오 문제
 ### 7-1. 프로젝트 정리 시나리오
 - 시나리오 : 프로젝트 종료 후 파일 정리
 
@@ -263,7 +263,7 @@ mkdir archives backup logs images documents scripts
 
 - 데이터 파일들(*.csv, *.dat)을 data 디렉터리로 이동
 
-## 8. 보너스 문제
+## 📁 8. 보너스 문제
 ### 8-1. 한 줄 명령어 도전
 - 모든 이미지 파일을 images 디렉터리로 이동하고, 모든 문서 파일을 docs 디렉터리로 이동하는 작업을 
 한 줄의 명령어로 실행하세요 (세미콜론 또는 && 사용)
@@ -276,7 +276,7 @@ mkdir archives backup logs images documents scripts
 ### 8-3. 파일 개수 확인 후 실행
 - .txt 파일이 5개 이상 있으면 backup 디렉터리로 복사하고, 그렇지 않으면 "파일이 부족합니다" 메시지를 출력하세요
 
-## 9. 검증 명령어
+## 📁 9. 검증 명령어
 - 각 문제를 해결한 후 다음 명령어들로 결과를 확인하세요
 
 ### 디렉터리 구조 확인
@@ -302,7 +302,7 @@ ls *.jpg | wc -l
 find . -type f | sort
 ```
 
-## 10. 주의사항
+## 📁 10. 주의사항
 ### ⚠️ 실습 시 주의사항
 
 rm 명령어 사용 시 특히 주의하세요
