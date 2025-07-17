@@ -1,4 +1,4 @@
-# Linux 와일드카드 실습 문제
+# 📁 Linux 와일드카드 실습 문제
 
 ## 기본 와일드카드 문자
 - `*` : 0개 이상의 모든 문자
@@ -7,7 +7,7 @@
 - `{}` : 중괄호 안의 패턴 중 하나 (brace expansion)
 
 ## 실습 환경 설정
-먼저 다음 명령어를 실행하여 실습 환경을 만들어보세요
+- 먼저 다음 명령어를 실행하여 실습 환경을 만들어보세요
 
 ```bash
 mkdir wildcard_practice
@@ -19,9 +19,7 @@ touch backup_2024.tar backup_2023.tar config.conf
 mkdir logs temp docs
 ```
 
----
-
-## 문제 1: 기본 와일드카드 (*) 사용
+## 📁 문제 1: 기본 와일드카드 (*) 사용
 
 ### 1-1. 모든 `.txt` 파일 목록 출력
 ```bash
@@ -45,9 +43,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ cp backup* temp/
 ```
 
----
-
-## 문제 2: 단일 문자 와일드카드 (?) 사용
+## 📁 문제 2: 단일 문자 와일드카드 (?) 사용
 
 ### 2-1. `file`로 시작하고 한 글자 숫자가 오는 `.txt` 파일 출력
 ```bash
@@ -64,9 +60,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ ls -l image?.*
 ```
 
----
-
-## 문제 3: 문자 범위 ([]) 사용
+## 📁 문제 3: 문자 범위 ([]) 사용
 
 ### 3-1. `file1.txt`, `file2.txt`, `file3.doc` 중에서 `file1.txt`와 `file2.txt`만 출력
 ```bash
@@ -83,9 +77,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ ls -l [a-f]*.*
 ```
 
----
-
-## 문제 4: 복합 와일드카드 활용
+## 📁 문제 4: 복합 와일드카드 활용
 
 ### 4-1. 확장자가 3글자인 모든 파일 출력 (예: .txt, .doc, .log, .jpg, .png, .gif, .tar)
 ```bash
@@ -102,9 +94,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ ls -l *.{txt,log}
 ```
 
----
-
-## 문제 5: 고급 와일드카드 활용
+## 📁 문제 5: 고급 와일드카드 활용
 
 ### 5-1. 파일명이 `test`로 시작하지 않는 모든 `.log` 파일 출력
 ```bash
@@ -121,9 +111,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ ls -l backup_{2023,2024}.*
 ```
 
----
-
-## 문제 6: 실전 응용
+## 📁 문제 6: 실전 응용
 
 ### 6-1. 확장자가 있는 모든 파일을 `temp` 디렉터리로 복사
 ```bash
@@ -135,9 +123,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ ls -l ????.*
 ```
 
----
-
-## 문제 7: 디렉터리 와일드카드
+## 📁 문제 7: 디렉터리 와일드카드
 
 ### 7-1. 현재 디렉터리의 모든 하위 디렉터리 목록 출력
 ```bash
@@ -154,9 +140,7 @@ mkdir logs temp docs
 [parksejin@localhost wildcard_practice]$ touch {logs,temp,docs}/readme.txt
 ```
 
----
-
-## 문제 8: 복잡한 패턴 매칭
+## 📁 문제 8: 복잡한 패턴 매칭
 
 ### 8-1. 파일명에 숫자가 정확히 1개 들어간 파일 출력
 ```bash
@@ -172,8 +156,6 @@ mkdir logs temp docs
 ```bash
 [parksejin@localhost wildcard_practice]$ rm {test,file}*.*
 ```
-
----
 
 ## 힌트
 - `ls -la`로 파일 목록과 상세 정보 확인
