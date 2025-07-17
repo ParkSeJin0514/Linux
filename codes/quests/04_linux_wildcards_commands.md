@@ -56,12 +56,12 @@ mkdir logs temp docs
 
 ### 2-2. `test`로 시작하고 한 글자 숫자가 오는 `.log` 파일 출력
 ```bash
-# 명령어를 작성하세요
+[parksejin@localhost wildcard_practice]$ ls -l test?.log
 ```
 
 ### 2-3. `image`로 시작하고 한 글자 숫자가 오는 모든 파일 출력
 ```bash
-[parksejin@localhost wildcard_practice]$ ls -l test?.log
+[parksejin@localhost wildcard_practice]$ ls -l image?.*
 ```
 
 ---
