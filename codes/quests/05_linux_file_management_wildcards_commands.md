@@ -4,23 +4,23 @@
 - 실습 디렉터리 생성
 ```
 mkdir wildcard_file_practice && \
-> cd wildcard_file_practice
+cd wildcard_file_practice
 ```
 
 - 테스트 파일들 생성
 ```
 touch report{1,2,3}.txt && \
-> touch data{1,2,3}.csv data_old.csv && \
-> touch image{1,2,3}.jpg photo.gif && \
-> touch backup{2023,2024}.tar config.conf && \
-> touch log_{error,access,system}.txt && \
-> touch temp{1,2,3}.tmp && \
-> touch file{001,002,010}.dat && \
-> touch scrpit{1,2}.sh test_script.sh && \
-> touch document.pdf presentation.ppt spreadsheet.xls && \
-> touch {readme,change}.md license.txt && \
-> touch {old,new,final}_report.txt && \
-> ls -l
+touch data{1,2,3}.csv data_old.csv && \
+touch image{1,2,3}.jpg photo.gif && \
+touch backup{2023,2024}.tar config.conf && \
+touch log_{error,access,system}.txt && \
+touch temp{1,2,3}.tmp && \
+touch file{001,002,010}.dat && \
+touch scrpit{1,2}.sh test_script.sh && \
+touch document.pdf presentation.ppt spreadsheet.xls && \
+touch {readme,change}.md license.txt && \
+touch {old,new,final}_report.txt && \
+ls -l
 ```
 - 기본 디렉터리들 생성
 ```
@@ -29,12 +29,11 @@ mkdir archives backup logs images documents scripts
 ## 1. mkdir 명령어 와일드카드 실습
 ### 1-1. 연도별 백업 디렉터리 생성
 -  2020년부터 2024년까지 백업 디렉터리를 한 번에 생성하세요
-
 -  예: backup_2020, backup_2021, backup_2022, backup_2023, backup_2024
 
 ```
 [parksejin@localhost wildcard_file_practice]$ mkdir backup_{2020..2024} && \
-> ls -l/
+> ls -l
 ```
 ### 1-2. 월별 로그 디렉터리 생성
 -  logs 디렉터리 안에 01월부터 12월까지 디렉터리 생성
