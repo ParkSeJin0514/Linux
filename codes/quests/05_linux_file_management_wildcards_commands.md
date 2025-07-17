@@ -118,7 +118,7 @@ mkdir images/ && \
 - "file_"로 시작하고 3자리 숫자가 포함된 .dat 파일들을 data 디렉터리로 이동하세요
 - (data 디렉터리가 없다면 먼저 생성)
 ```
-[parksejin@localhost wildcard_file_practice]$ mv file_*.dat ./data && \
+[parksejin@localhost wildcard_file_practice]$ mv file[0-9][0-9][0-9].dat ./data && \
 > ls -l data/
 ```
 ### 3-5. 조건부 파일 이동
