@@ -46,16 +46,14 @@ mkdir archives backup logs images documents scripts
 ### 1-3. 프로젝트별 디렉터리 생성
 - project_A, project_B, project_C 디렉터리를 한 번에 생성하세요
 ```
-[parksejin@localhost wildcard_file_practice]$ mkdir project_{A,B,C} && \
+[parksejin@localhost wildcard_file_practice]$ mkdir project_{A..C} && \
 > ls -l
 ```
 ### 1-4. 계층적 디렉터리 생성
 - data/2024/{01,02,03} 구조로 디렉터리를 생성하세요
 - (data 디렉터리 안에 2024 디렉터리, 그 안에 01, 02, 03 디렉터리)
 ```
-[parksejin@localhost wildcard_file_practice]$ mkdir -p data && \
-> mkdir -p data/2024 && \
-> mkdir data/2024/{01..03} && \
+[parksejin@localhost wildcard_file_practice]$ mkdir -p data/2024/{01..03} && \
 > ls -l data/2024/
 ```
 ## 2. cp 명령어 와일드카드 실습
@@ -76,7 +74,7 @@ mkdir archives backup logs images documents scripts
 ### 2-3. 숫자가 포함된 파일 복사
 - 파일명에 숫자가 포함된 모든 이미지 파일(.jpg, .png)을 images 디렉터리로 복사하세요
 ```
-mkdir images/ && \
+[parksejin@localhost wildcard_file_practice]$ mkdir images/ && \
 > cp *{0-9}*.{jpg,png} ./images && \
 > ls -l images
 ```
@@ -125,7 +123,7 @@ mkdir images/ && \
 - "old_" 또는 "new_"로 시작하는 모든 파일을 archives 디렉터리로 이동하세요
 ```
 [parksejin@localhost wildcard_file_practice]$ mv {old,new}_* archives/ && \
-> ls -a archives/
+> ls -l archives/
 ```
 ## 4. rm 명령어 와일드카드 실습
 ### 4-1. 임시 파일 삭제
@@ -143,7 +141,7 @@ mkdir images/ && \
 ### 4-3. 백업 파일 정리
 - 2023년 백업 파일만 삭제하세요 (backup_2023.tar)
 ```
-[parksejin@localhost wildcard_file_practice]$ rm -r  archives/backup_2023/ && \
+[parksejin@localhost wildcard_file_practice]$ rm -r  archives/backup_2023.tar/ && \
 > ls -l archives/
 ```
 ### 4-4. 조건부 파일 삭제
@@ -183,8 +181,7 @@ mkdir images/ && \
 ### 5-3. 날짜별 로그 정리
 - 1단계: logs 디렉터리에 error, access, system 하위 디렉터리 생성
 ```
-[parksejin@localhost wildcard_file_practice]$ mkdir -p logs && \
-> mkdir -p logs/{error,access,system} && \
+[parksejin@localhost wildcard_file_practice]$ mkdir -p logs/{error,access,system} && \
 > ls -l && \
 > ls -l logs/
 ```
@@ -205,17 +202,23 @@ mkdir images/ && \
 ### 6-1. 복잡한 패턴 매칭
 - "report" 또는 "data"로 시작하고 숫자가 포함된 모든 파일을 찾아서 processed 디렉터리로 복사하세요
 ```
-mkdir processed && \
-> mv report* ./processed && \
-> mv data* ./processed && \
+[parksejin@localhost wildcard_file_practice]$ mkdir processed && \
+> mv {report,data}*[0-9]* ./processed && \
 > ls -l processed
 ```
 ### 6-2. 제외 패턴 활용
 - 모든 파일 중에서 "final_"로 시작하지 않는 .txt 파일들을 draft 디렉터리로 이동하세요
 ```
 [parksejin@localhost wildcard_file_practice]$ mkdir draft && \
-> mv -v !("final_"*).txt draft/ && \
+> mv -v !(final_*).txt draft/ && \
 > ls -l draft/
+```
+### 6-3. 범위 지정 패턴
+- 파일명에 001부터 009까지의 숫자가 포함된 파일들을 single_digit 디렉터리로 복사하세요
+```
+[parksejin@localhost wildcard_file_practice]$ mkdir single_digit/ && \
+> mv *[000..009]* single_digit/ && \
+> ls -l
 ```
 ## 7. 실전 시나리오 문제
 ### 7-1. 프로젝트 정리 시나리오
@@ -233,6 +236,10 @@ mkdir processed && \
 [parksejin@localhost wildcard_file_practice]$ mkdir archive && \
 > mv backup* ./archive && \
 > ls -l archive
+```
+- 불필요한 임시 파일들(*.tmp)을 삭제
+```
+[parksejin@localhost wildcard_file_practice]$ rm -r *.tmp
 ```
 ### 7-2. 로그 관리 시나리오
 - 시나리오: 서버 로그 정리
