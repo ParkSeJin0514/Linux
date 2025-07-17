@@ -144,7 +144,7 @@ mkdir logs temp docs
 
 ### 8-1. 파일명에 숫자가 정확히 1개 들어간 파일 출력
 ```bash
-[parksejin@localhost wildcard_practice]$ ls -l *[!0-9].*
+[parksejin@localhost wildcard_practice]$ ls -l *[!0-9][0-9][!0-9]*
 ```
 
 ### 8-2. 확장자가 `.txt`, `.doc`, `.log` 중 하나인 파일들의 크기 확인
