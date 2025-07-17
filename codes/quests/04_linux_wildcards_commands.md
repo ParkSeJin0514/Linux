@@ -141,12 +141,12 @@ mkdir logs temp docs
 
 ### 7-1. 현재 디렉터리의 모든 하위 디렉터리 목록 출력
 ```bash
-[parksejin@localhost wildcard_practice]$ find -type d
+[parksejin@localhost wildcard_practice]$ ls -d */
 ```
 
 ### 7-2. `d`로 시작하는 디렉터리만 출력
 ```bash
-[parksejin@localhost wildcard_practice]$ find . -type d -name "d*"
+[parksejin@localhost wildcard_practice]$ ls -d d*/
 ```
 
 ### 7-3. 모든 하위 디렉터리에 `readme.txt` 파일 생성
