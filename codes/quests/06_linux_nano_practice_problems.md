@@ -21,7 +21,7 @@ cd shell_practice
 touch data.txt config.conf notes.md
 mkdir scripts logs backup
 ```
-## 📁 문제 1: nano 편집기 활용
+## 📁 문제 1. nano 편집기 활용
 ### 1-1. 간단한 설정 파일 생성
 - nano 편집기를 사용하여 server.conf 파일을 생성하고 다음 내용을 입력하세요
 ```
@@ -48,7 +48,7 @@ Hello Linux World!
 [parksejin@localhost shell_practice]$ cat data.txt              # data.txt 내용 출력
 Hello Linux World!
 ```
-## 📁 문제 2: 실행 가능한 쉘 스크립트 작성
+## 📁 문제 2. 실행 가능한 쉘 스크립트 작성
 ### 2-1. 백업 스크립트 생성
 - backup.sh 파일을 생성하여 다음 기능을 수행하는 스크립트를 작성하세요
 - 현재 날짜와 시간 출력
@@ -102,7 +102,7 @@ tmpfs                348M  7.9M  340M   3% /run
 /dev/nvme0n1p1       960M  366M  595M  39% /boot
 tmpfs                174M  120K  174M   1% /run/user/1000
 ```
-## 📁 문제 3: && 연산자를 이용한 다중 명령어 실행
+## 📁 문제 3. && 연산자를 이용한 다중 명령어 실행
 ### 3-1. 디렉토리 생성과 파일 생성
 - projects 디렉토리를 생성하고, 성공하면 그 안에 readme.txt 파일을 생성하는 한 줄 명령어를 작성하세요.
 ```

@@ -26,7 +26,7 @@ touch hello.sh backup.sh system_info.txt
 touch data1.txt data2.txt notes.md
 mkdir scripts logs temp
 ```
-## 📁 문제 1: nano 편집기 사용
+## 📁 문제 1. nano 편집기 사용
 ### 1-1. 기본 파일 생성 및 편집
 - hello.sh 파일을 nano로 열어 다음 내용을 작성하세요.
 - #!/bin/bash
@@ -49,7 +49,7 @@ echo "안녕하세요! 리눅스 세계에 오신 것을 환영합니다."
 #!bin/bash
 uname -a
 ```
-## 📁 문제 2: 쉘 스크립트 작성 및 실행
+## 📁 문제 2. 쉘 스크립트 작성 및 실행
 ### 2-1. 기본 쉘 스크립트 작성
 - backup.sh 파일을 만들어 다음 기능을 수행하는 스크립트를 작성하세요.
 - 현재 날짜 출력
@@ -77,7 +77,7 @@ pwd
 Fri Jul 18 05:23:28 PM KST 2025
 start backup
 ```
-## 📁 문제 3: && 연산자를 이용한 다중 명령어
+## 📁 문제 3. && 연산자를 이용한 다중 명령어
 ### 3-1. 조건부 실행
 - 디렉터리 생성이 성공하면 해당 디렉터리로 이동하는 명령어를 작성하세요.
 ```
@@ -105,7 +105,7 @@ echo "Hello World"
 > ./quick_test.sh
 Hello World
 ```
-## 📁 문제 4: chmod를 이용한 권한 조정
+## 📁 문제 4. chmod를 이용한 권한 조정
 ### 4-1. 기본 권한 설정
 - test_script.sh 파일을 생성하고 소유자에게만 모든 권한을 부여하세요.
 ```
@@ -130,7 +130,7 @@ Hello World
 [parksejin@localhost new_project]$ ls -l
 ----------. 1 parksejin parksejin  0 Jul 18 17:30 test_script.sh
 ```
-## 📁 문제 5: 종합 실습
+## 📁 문제 5. 종합 실습
 ### 5-1. 자동화 스크립트 작성
 - 다음 기능을 수행하는 setup.sh 스크립트를 작성하세요.
 - logs 디렉터리가 없으면 생성
@@ -161,7 +161,7 @@ Fri Jul 18 05:35:20 PM KST 2025
 date
 echo "설정 완료"
 ```
-## 📁 문제 7: 디렉토리 및 권한 실습
+## 📁 문제 7. 디렉토리 및 권한 실습
 ### 7-1. 디렉토리 생성 및 권한 변경
 - project_logs 디렉토리를 생성하고, 사용자(User)에게만 쓰기 권한을 제거한 후 권한을 확인하는 명령어를 작성하세요.
 ```

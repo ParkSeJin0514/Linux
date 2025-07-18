@@ -1,4 +1,4 @@
-## 📁 연습문제 1: 기본 파일 시스템 탐색
+## 📁 연습문제 1. 기본 파일 시스템 탐색
 ### 1-1. 현재 위치 확인 및 이동
 - 현재 작업 디렉터리의 절대 경로를 출력하시오.
 ```
@@ -29,7 +29,7 @@
 ```
 [parksejin@localhost etc]$ ls
 ```
-## 📁 연습문제 2: 디렉터리 및 파일 생성
+## 📁 연습문제 2. 디렉터리 및 파일 생성
 ### 2-1. 디렉터리 구조 생성
 - 다음과 같은 디렉터리 구조를 생성하시오.
 
@@ -68,7 +68,7 @@ practice/
 ```
 [parksejin@localhost notes]$ echo "Practice Linux" > memo.txt
 ```
-## 📁 연습문제 3: 파일 내용 확인 및 조작
+## 📁 연습문제 3. 파일 내용 확인 및 조작
 ### 3-1. 파일 내용 출력
 - 앞서 생성한 readme.txt 파일의 내용을 출력하시오.
 ```
@@ -87,7 +87,7 @@ practice/
 ```
 [parksejin@localhost practice]$ cp -r documents backup
 ```
-## 📁 연습문제 4: 파일 이동 및 이름 변경
+## 📁 연습문제 4. 파일 이동 및 이름 변경
 ### 4-1. 파일 이동
 - memo.txt 파일을 documents/ 디렉터리로 이동하시오.
 ```
@@ -106,7 +106,7 @@ practice/
 ```
 [parksejin@localhost practice]$ mv memo.txt study_notes.txt
 ```
-## 📁 연습문제 5: 종합 실습
+## 📁 연습문제 5. 종합 실습
 ### 5-1. 프로젝트 디렉터리 생성
 - 다음 요구사항에 따라 프로젝트 디렉터리를 생성하시오.
 - my_project/라는 최상위 디렉터리 생성

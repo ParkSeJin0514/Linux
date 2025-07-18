@@ -1,5 +1,5 @@
 # 📁 리눅스 상대 주소 실습 문제
-- 사전 준비 : 실습 환경 설정
+## 사전 준비 : 실습 환경 설정
 - 다음 명령어로 실습 환경을 준비하세요
 ```
 mkdir -p ~/practice/project/{src,docs,tests,config}
@@ -31,7 +31,7 @@ touch ~/practice/project/tests/test_main.py
     └── settings.conf
 ```
 
-## 📁 연습문제 1 : 기본 상대 주소 이해
+## 📁 연습문제 1. 기본 상대 주소 이해
 ### 1-1. 현재 위치에서 상대 주소 작성
 - 현재 위치가 ~/practice/project/src/main/일 때, 다음 파일들로 이동하는 상대 주소를 작성하시오.
 
@@ -61,7 +61,7 @@ ls ../../docs/user/manual.txt
 ls ../../config/settings.conf
 ```
 
-## 📁 연습문제 2 : 다양한 시작점에서의 상대 주소
+## 📁 연습문제 2. 다양한 시작점에서의 상대 주소
 ### 2-1. 시작점 변경 실습
 - 현재 위치가 ~/practice/project/docs/user/일 때, app.py 파일로 이동하는 상대 주소를 작성하시오.
 ```
@@ -90,7 +90,7 @@ ls ../../config/settings.conf
 [parksejin@localhost dev]$ cd ../../src/utils/
 ```
 
-## 📁 연습문제 3 : 파일 내용 확인 및 조작
+## 📁 연습문제 3. 파일 내용 확인 및 조작
 ### 3-1. 상대 주소를 이용한 파일 내용 출력
 - 현재 위치가 ~/practice/project/src/utils/일 때, 프로젝트 루트의 README.md 파일 내용을 출력하시오.
 ```
@@ -114,7 +114,7 @@ touch ~/practice/project/config/settings.conf
 [parksejin@localhost main]$ echo "# App Test File" > ./../../tests/test_app.py
 ```
 
-## 📁 연습문제 4 : 파일 복사 및 이동
+## 📁 연습문제 4. 파일 복사 및 이동
 ### 4-1. 상대 주소를 이용한 파일 복사
 - 현재 위치가 ~/practice/project/docs/dev/일 때, api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.
 ```
@@ -138,7 +138,7 @@ touch ~/practice/project/config/settings.conf
 [parksejin@localhost tests]$ mv ../src/main/config.py ../config/
 ```
 
-## 📁 연습문제 5: 복합 상대 주소 활용
+## 📁 연습문제 5. 복합 상대 주소 활용
 ### 5-1. 다중 파일 조작
 - 현재 위치가 ~/practice/project/일 때, src/main/ 디렉토리의 모든 파일을 docs/dev/ 디렉토리에 복사하시오.
 ```
@@ -153,7 +153,7 @@ touch ~/practice/project/config/settings.conf
 [parksejin@localhost project]$ cp -r ./config/ ./backup_config/
 ```
 
-## 📁 연습문제 6: 에러 찾기 및 수정
+## 📁 연습문제 6. 에러 찾기 및 수정
 ### 6-1. 잘못된 상대 주소 찾기
 - 현재 위치가 ~/practice/project/docs/user/일 때, 다음 명령어들 중 에러가 있는 것을 찾고 올바른 명령어로 수정하시오.
 - A
@@ -202,7 +202,7 @@ Question : ../../config/../README.md
 A : [parksejin@localhost unit]$ cat ../../README.md
 ```
 
-## 📁 연습문제 7: 종합 실습
+## 📁 연습문제 7. 종합 실습
 ### 7-1. 프로젝트 구조 재정리
 - 현재 위치가 ~/practice/project/일 때, 다음 작업을 수행하시오.
 - src/main/ 디렉토리에 models/ 하위 디렉토리를 생성하시오.
