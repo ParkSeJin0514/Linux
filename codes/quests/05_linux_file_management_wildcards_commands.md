@@ -127,7 +127,7 @@ mkdir archives backup logs images documents scripts
 ```
 ## 📁 4. rm 명령어 와일드카드 실습
 ### 4-1. 임시 파일 삭제
-- 모든 .tmp 파일을 삭제하세요 (주의: 실제로는 신중히 실행)
+- 모든 .tmp 파일을 삭제하세요 (주의 : 실제로는 신중히 실행)
 ```
 [parksejin@localhost wildcard_file_practice]$ rm -r ./temp/*.tmp && \
 > ls -l temp/
