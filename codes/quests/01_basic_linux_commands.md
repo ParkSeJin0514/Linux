@@ -11,7 +11,7 @@ PS C:\Develops\Quests> pwd
 
 ### **문제 1-2: 폴더 구조 만들기**
 
-**다음 폴더 구조를 생성하세요**
+- **다음 폴더 구조를 생성하세요**
 
 **powershell_practice/** 
 ```
@@ -187,7 +187,7 @@ PS C:\Develops\Quests\powershell_practice\documents\images>
 
 ### **문제 5-1: 프로젝트 구조 만들기**
 
-**다음과 같은 프로젝트 구조를 생성하세요:**
+- **다음과 같은 프로젝트 구조를 생성하세요:**
 
 **my_project/**
 ```
