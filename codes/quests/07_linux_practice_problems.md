@@ -40,7 +40,7 @@ mkdir scripts logs temp
 echo "안녕하세요! 리눅스 세계에 오신 것을 환영합니다."
 ```
 ### 1-2. 파일 내용 수정
-system_info.txt 파일을 nano로 열어 현재 시스템 정보를 기록하는 내용을 작성하세요.
+- system_info.txt 파일을 nano로 열어 현재 시스템 정보를 기록하는 내용을 작성하세요.
 ```
 [parksejin@localhost shell_practice]$ nano system_info.txt
 ```
@@ -66,7 +66,7 @@ echo "start backup"
 pwd
 ```
 ### 2-2. 스크립트 실행 권한 부여
-backup.sh 파일에 실행 권한을 부여하세요.
+- backup.sh 파일에 실행 권한을 부여하세요.
 ```
 [parksejin@localhost shell_practice]$ chmod 755 backup.sh
 ```
@@ -192,14 +192,14 @@ fi
 backup 디렉토리가 없습니다
 ```
 ### 7-3. 다중 명령어 조건 실행
-project_logs 디렉토리로 이동한 후, 이동에 성공한 경우 log.txt 파일을 만들고 "로그 생성 완료" 메시지를 출력하는 명령어를 작성하세요.
+- project_logs 디렉토리로 이동한 후, 이동에 성공한 경우 log.txt 파일을 만들고 "로그 생성 완료" 메시지를 출력하는 명령어를 작성하세요.
 ```
 [parksejin@localhost shell_practice]$ nano movelogs 
 [parksejin@localhost shell_practice]$ ./movelogs 
 로그 생성 완료
 ```
 ### 7-4. 쉘 스크립트 실행 권한 설정 (User만)
-앞서 작성한 check_dir.sh 파일에 대해 사용자(User) 에게만 실행 권한을 부여하고 현재 권한을 확인하는 명령어를 작성하세요.
+- 앞서 작성한 check_dir.sh 파일에 대해 사용자(User) 에게만 실행 권한을 부여하고 현재 권한을 확인하는 명령어를 작성하세요.
 ```
 [parksejin@localhost shell_practice]$ chmod 100 check_dir.sh && \
 > ls -l
