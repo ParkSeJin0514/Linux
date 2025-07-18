@@ -210,7 +210,7 @@ mkdir archives backup logs images documents scripts
 - 모든 파일 중에서 "final_"로 시작하지 않는 .txt 파일들을 draft 디렉터리로 이동하세요
 ```
 [parksejin@localhost wildcard_file_practice]$ mkdir draft && \
-> mv -v !(final_*).txt draft/ && \
+> mv !(final_*).txt draft/ && \
 > ls -l draft/
 ```
 ### 6-3. 범위 지정 패턴
@@ -323,3 +323,29 @@ ls *.txt                 # 선택될 파일들 미리 확인
 - `?` 단일 문자 활용 : file?.txt
 - 복합 패턴 활용 : *[0-9]*, file[1-3].txt
 - 디렉터리 생성 시 -p 옵션 활용 : mkdir -p path/to/directory
+
+## 🚀 해결방안
+### 6-2. 제외 패턴 활용
+- 모든 파일 중에서 "final_"로 시작하지 않는 .txt 파일들을 draft 디렉터리로 이동하세요
+```
+# 처음시도 
+mv !{final_*}.txt draft/
+# 그러나 {}안에 final_을 넣을 경우 f,i,n,a,l,_ 이 되어 f,i,n,a,l,_ 들어간 모든 문자를 출력하지 않게 된다
+```
+### 🚀 Solution
+```
+[parksejin@localhost wildcard_file_practice]$ mkdir draft && \
+> mv !(final_*).txt draft/ && \
+> ls -l draft/
+```
+### 4-4. 조건부 파일 삭제
+- 확장자가 3글자가 아닌 파일들을 삭제하세요
+- 힌트: 확장자가 .jpg, .png, .gif, .txt, .csv, .tar, .dat, .pdf, .ppt, .xls가 아닌 파일
+```
+# 부정문을 쓸 때 (), {} 밖에 !를 써야됨
+```
+### 🚀 Solution
+```
+[parksejin@localhost wildcard_file_practice]$ rm -r !(*.???) && \
+> ls -l
+```
