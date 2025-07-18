@@ -68,10 +68,11 @@ chmod 777 backup.sh                                             # backup.sh 권�
 - 복사 완료 메시지 출력
 - 스크립트 파일 생성 및 실행 권한 부여 명령어를 작성하세요
 ```
-[parksejin@localhost shell_practice]$ cp data.txt ./backup/
+[parksejin@localhost shell_practice]$ chmod 777 data.txt
+[parksejin@localhost shell_practice]$ ./data.txt
 [parksejin@localhost shell_practice]$ ls -l ./backup/
 total 4
--rw-r--r--. 1 parksejin parksejin 19 Jul 18 14:44 data.txt
+-rwxrwxrwx. 1 parksejin parksejin 19 Jul 18 14:44 data.txt
 ```
 ### 2-2. 시스템 정보 출력 스크립트
 - sysinfo.sh 스크립트를 생성하여 현재 사용자명, 현재 디렉토리, 디스크 사용량을 출력하는 스크립트를 작성하고 실행하세요.
