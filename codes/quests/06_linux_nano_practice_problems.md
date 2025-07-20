@@ -111,7 +111,7 @@ tmpfs                174M  120K  174M   1% /run/user/1000
 > ls -l
 -rw-r--r--. 1 parksejin parksejin  0 Jul 18 14:56 readme.txt
 ```
-3-2. 파일 존재 확인과 내용 출력
+### 3-2. 파일 존재 확인과 내용 출력
 - server.conf 파일이 존재하는지 확인하고, 존재하면 파일 내용을 출력하는 한 줄 명령어를 작성하세요
 ```
 [parksejin@localhost shell_practice]$ ls -l server.conf && \
