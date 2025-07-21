@@ -386,30 +386,34 @@ tmpfs                174M  124K  174M   1% /run/user/1000
 - company/departments/finance/ : managers 그룹만 접근 가능
 - company/projects/ : 프로젝트 참여자만 해당 프로젝트 접근 가능
 ```
-[root@localhost permission_practice]# chmod 744 company/
+[root@localhost permission_practice]# chmod 744 company/ && \
+> ls -l ./
 drwxr--r--. 4 root root 41 Jul 21 16:48 company
 ```
 ```
 [root@localhost permission_practice]# sudo groupadd finance
 [root@localhost permission_practice]# sudo groupadd marketing
-[root@localhost permission_practice]# chgrp finance company/departments/finance/
-[root@localhost permission_practice]# chgrp marketing company/departments/marketing/
+[root@localhost permission_practice]# sudo chgrp finance company/departments/finance/
+[root@localhost permission_practice]# sudo chgrp marketing company/departments/marketing/
+[root@localhost permission_practice]# chmod 770 company/departments/dev/
+[root@localhost permission_practice]# chmod 770 company/departments/finance/
+[root@localhost permission_practice]# chmod 770 company/departments/hr/
+[root@localhost permission_practice]# chmod 770 company/departments/marketing/
 [root@localhost permission_practice]# ls -l company/departments/
-drwxrwxr-x. 2 alice developers 123 Jul 21 16:48 dev
-drwxr-xr-x. 2 root  finance     64 Jul 21 16:48 finance
-drwxr-xr-x. 2 diana managers    89 Jul 21 16:48 hr
-drwxr-xr-x. 2 root  marketing    6 Jul 21 16:48 marketing
+drwxrwx---. 2 alice developers 123 Jul 21 22:08 dev
+drwxrwx---. 2 root  finance     64 Jul 21 22:08 finance
+drwxrwx---. 2 diana managers    89 Jul 21 22:08 hr
+drwxrwx---. 2 root  marketing    6 Jul 21 22:08 marketing
 ```
 ```
-[root@localhost permission_practice]# chgrp managers company/departments/finance/
+[root@localhost permission_practice]# chmod 070 company/departments/finance/
 [root@localhost permission_practice]# ls -l company/departments/
-drwxr-xr-x. 2 root  managers    64 Jul 21 16:48 finance
+d---rwx---. 2 root  managers    64 Jul 21 16:48 finance
 ```
 ```
-[root@localhost permission_practice]# sudo usermod -aG alice_bob charlie
-[root@localhost permission_practice]# chown alice:alice_bob company/projects/
+[root@localhost permission_practice]# sudo chown alice:developers company/projects/
 [root@localhost permission_practice]# ls -l company/
-drwxr-xr-x. 5 alice alice_bob 57 Jul 21 16:48 projects
+drwxr-xr-x. 5 alice developers 57 Jul 21 22:08 projects
 ```
 ### 9-2. 임시 작업 공간 설정
 - 임시 작업을 위한 공간을 다음과 같이 설정하세요
@@ -419,9 +423,11 @@ drwxr-xr-x. 5 alice alice_bob 57 Jul 21 16:48 projects
 ```
 [root@localhost permission_practice]# mkdir temp/
 [root@localhost permission_practice]# chmod 1777 temp/
+[root@localhost permission_practice]# ls -l
+drwxrwxrwt. 2 root root    6 Jul 21 23:27 temp
+```
+```
 [root@localhost permission_practice]# sudo crontab -e
-```
-```
 # vi
 0 3 * * * find /tmp/temp -type f -mtime +7 -exec rm -f {} \;
 # 작성 후 나가는 법
