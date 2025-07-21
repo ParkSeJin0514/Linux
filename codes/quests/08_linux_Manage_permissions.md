@@ -223,32 +223,45 @@ drwxr-xr-t. 5 root root 48 Jul 21 16:48 backup
 - company/departments/hr/ 디렉터리와 모든 하위 파일 : diana 소유, managers 그룹
 - shared/tools/ 디렉터리와 모든 하위 파일 : root 소유, developers 그룹
 ```
-[root@localhost permission_practice]# chown -R alice:developers company/departments/dev/
-[root@localhost permission_practice]# ls -l company/departments/
-drwxrwxr-x. 2 alice developers 123 Jul 21 16:48 dev
+[root@localhost permission_practice]# sudo chown -R alice:developers company/departments/dev/
+[root@localhost permission_practice]# ls -la company/departments/dev/
+drwxrw-r--. 2 alice developers 123 Jul 21 22:08 .
+-rw-r--r--. 1 alice developers  18 Jul 21 22:08 api.conf
+------x---. 1 alice developers  32 Jul 21 22:08 build.sh
+-rw-r--r--. 1 alice developers   0 Jul 21 22:08 config.py
+-rw-r--r--. 1 alice developers  24 Jul 21 22:08 database.conf
+-rw-r--r--. 1 alice developers   0 Jul 21 22:08 main.py
+-rw-r--r--. 1 alice developers   0 Jul 21 22:08 README.md
+-rw-r--r--. 1 alice developers   0 Jul 21 22:08 test.py
 ```
 ```
-[root@localhost permission_practice]# chown -R diana:managers company/departments/hr/
-[root@localhost permission_practice]# ls -l company/departments/
-drwxr-xr-x. 2 diana managers    89 Jul 21 16:48 hr
+[root@localhost permission_practice]# sudo chown -R diana:managers company/departments/hr/
+[root@localhost permission_practice]# ls -la company/departments/hr/
+drwxr-xr-x. 2 diana managers 89 Jul 21 22:08 .
+-rw-r--r--. 1 diana managers  0 Jul 21 22:08 contracts.pdf
+-rw-r--r--. 1 diana managers  0 Jul 21 22:08 employees.xlsx
+-rw-r--r--. 1 diana managers  0 Jul 21 22:08 policies.txt
+-rw-r-Sr--. 1 diana managers 25 Jul 21 22:08 salaries.txt
 ```
 ```
-[root@localhost permission_practice]# chown -R root:developers shared/tools/
-[root@localhost permission_practice]# ls -l shared/tools/
-d-w-r-----. 2 alice developers 68 Jul 21 16:48 documents
+[root@localhost permission_practice]# sudo chown -R root:developers shared/tools/
+[root@localhost permission_practice]# ls -la shared/tools/
+drw-r-xr--. 2 root developers 40 Jul 21 22:08 .
+-rw-r--r--. 1 root developers 33 Jul 21 22:08 backup.sh
+-rw-r-Sr--. 1 root developers 37 Jul 21 22:08 deploy.sh
 ```
 ### 4-2. 그룹 전용 변경
 - 다음 디렉터리들의 그룹만 변경하세요
 - company/projects/ : managers 그룹으로 변경
 - backup/daily/ : developers 그룹으로 변경
 ```
-[root@localhost permission_practice]# chgrp managers company/projects/
-[root@localhost permission_practice]# ls -l company/
+[root@localhost permission_practice]# sudo chgrp managers company/projects/ && \
+> ls -l company/
 drwxr-xr-x. 5 root managers 57 Jul 21 16:48 projects
 ```
 ```
-[root@localhost permission_practice]# chgrp developers backup/daily/
-[root@localhost permission_practice]# ls -l backup/
+[root@localhost permission_practice]# sudo chgrp developers backup/daily/ && \
+> ls -l company/
 drwxr-xr-x. 2 root developers 60 Jul 21 16:48 daily
 ```
 ## 📁 6. umask 및 기본 권한 관리
