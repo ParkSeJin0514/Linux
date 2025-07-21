@@ -85,30 +85,27 @@ tree permission_practice
 - company/departments/dev/build.sh : 개발팀만 실행 가능
 ```
 [root@localhost permission_practice]# sudo chgrp developers ./company/departments/dev/
-[root@localhost permission_practice]# sudo chown eve ./company/departments/dev/
 [root@localhost permission_practice]# ls -l company/departments/
 total 0
-drwxr-xr-x. 2 eve developers 123 Jul 21 16:48 dev
+drwxr-xr-x. 2 root developers 123 Jul 21 16:48 dev
 ```
 ```
-[root@localhost permission_practice]# chmod 775 company/departments/dev
+[root@localhost permission_practice]# chmod 770 company/departments/dev
 [root@localhost permission_practice]# ls -l company/departments/
 total 0
-drwxrwxr-x. 2 eve develops 123 Jul 21 16:48 dev
+drwxrwx---. 2 root develops 123 Jul 21 16:48 dev
 ```
 ```
-[root@localhost permission_practice]# chown eve company/departments/dev/main.py 
-[root@localhost permission_practice]# chgrp developers company/departments/dev/main.py 
+[root@localhost permission_practice]# sudo chgrp developers company/departments/dev/main.py 
 [root@localhost permission_practice]# chmod 764 company/departments/dev/main.py 
 [root@localhost permission_practice]# ls -l company/departments/dev/main.py 
--rwxrw-r--. 1 eve developers 0 Jul 21 16:48 company/departments/dev/main.py
+-rwxrw-r--. 1 root developers 0 Jul 21 16:48 company/departments/dev/main.py
 ```
 ```
-[root@localhost permission_practice]# chown eve company/departments/dev/build.sh 
-[root@localhost permission_practice]# chgrp developers company/departments/dev/build.sh 
+[root@localhost permission_practice]# sudo chgrp developers company/departments/dev/build.sh 
 [root@localhost permission_practice]# chmod 010 company/departments/dev/build.sh
 [root@localhost permission_practice]# ls -l company/departments/dev/build.sh 
-------x---. 1 eve developers 32 Jul 21 16:48 company/departments/dev/build.sh
+------x---. 1 root developers 32 Jul 21 16:48 company/departments/dev/build.sh
 ```
 
 ### 1-2. 개인 디렉터리 보안 설정
@@ -117,21 +114,21 @@ drwxrwxr-x. 2 eve develops 123 Jul 21 16:48 dev
 - private/alice/personal.txt : alice만 읽기/쓰기 가능
 - private/bob/config.json : bob만 읽기/쓰기 가능
 ```
-[root@localhost permission_practice]# chown alice private/alice/
+[root@localhost permission_practice]# sudo chown alice:alice private/alice/
 [root@localhost permission_practice]# ls -l private/
-drwxr-xr-x. 2 alice root 65 Jul 21 16:48 alice
+drwxr-xr-x. 2 alice alice 65 Jul 21 16:48 alice
 ```
 ```
-[root@localhost permission_practice]# chown alice private/alice/personal.txt 
+[root@localhost permission_practice]# sudo chown alice:alice private/alice/personal.txt 
 [root@localhost permission_practice]# chmod 600 private/alice/personal.txt 
 [root@localhost permission_practice]# ls -l private/alice/
--rw-------. 1 alice root 0 Jul 21 16:48 personal.txt
+-rw-------. 1 alice alice 0 Jul 21 16:48 personal.txt
 ```
 ```
-[root@localhost permission_practice]# chown bob private/bob/config.json
+[root@localhost permission_practice]# chown bob:bob private/bob/config.json
 [root@localhost permission_practice]# chmod 600 private/bob/config.json 
 [root@localhost permission_practice]# ls -l private/bob/
--rw-------. 1 bob  root 0 Jul 21 16:48 config.json
+-rw-------. 1 bob  bob  0 Jul 21 22:08 config.json
 ```
 
 ## 📁 2. 그룹 기반 권한 관리
@@ -141,22 +138,24 @@ drwxr-xr-x. 2 alice root 65 Jul 21 16:48 alice
 - shared/resources/ : developers 그룹만 접근 가능
 - shared/tools/ : 모든 사용자가 읽기 가능, developers 그룹만 실행 가능
 ```
+[root@localhost permission_practice]# sudo groupadd alice_bob
 [root@localhost permission_practice]# sudo usermod -aG alice_bob alice
 [root@localhost permission_practice]# sudo usermod -aG alice_bob bob
-[root@localhost permission_practice]# chgrp alice_bob shared/documents/ && \
-> chmod 240 shared/documents/
+[root@localhost permission_practice]# sudo chgrp alice_bob shared/documents/ && \
+> chmod 240 shared/documents/ && \
+> ls -l shared/
 d-w-r-----. 2 alice alice_bob 68 Jul 21 16:48 documents
 ```
 ```
-[root@localhost permission_practice]# chgrp developers shared/resources/
+[root@localhost permission_practice]# sudo chgrp developers shared/resources/
 [root@localhost permission_practice]# ls -l shared/
 drwxr-xr-x. 2 root developers 58 Jul 21 16:48 resources
 ```
 ```
-[root@localhost permission_practice]# chmod 744 shared/tools/ && \
-> chgrp developers shared/tools/
-[root@localhost permission_practice]# ls -l shared/
-drwxr--r--. 2 root developers 40 Jul 21 16:48 tools
+[root@localhost permission_practice]# sudo chgrp developers shared/tools/ && \
+> chmod 654 shared/tools/ && \
+> ls -l shared/
+drw-r-xr--. 2 root developers 40 Jul 21 16:48 tools
 ```
 
 ### 2-2. 프로젝트별 협업 권한
