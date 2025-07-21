@@ -168,7 +168,7 @@ drw-r-xr--. 2 root developers 40 Jul 21 16:48 tools
 drwxr-xr-x. 2 root developers 55 Jul 21 16:48 project_a
 ```
 ```
-[root@localhost permission_practice]# chown alice:bob company/projects/project_b && \
+[root@localhost permission_practice]# sudo chown alice:bob company/projects/project_b && \
 > chmod 770 company/projects/project_b && \
 > ls -l company/projects/
 drwxrwx---. 2 alice bob        67 Jul 21 22:08 project_b
@@ -181,18 +181,18 @@ drwxrwx---. 2 alice bob        67 Jul 21 22:08 project_b
 - company/departments/hr/salaries.txt : SetUID 설정 (실제 환경에서는 권장하지 않지만 실습용)
 ```
 [root@localhost permission_practice]# sudo chgrp developers shared/tools/deploy.sh
-[root@localhost permission_practice]# sudo chmod g+s shared/tools/deploy.sh 
+[root@localhost permission_practice]# chmod g+s shared/tools/deploy.sh 
 [root@localhost permission_practice]# ls -l shared/tools/
 -rw-r-Sr--. 1 root developers 37 Jul 21 16:48 deploy.sh
 ```
 ```
-[root@localhost permission_practice]# sudo chmod +t backup/
+[root@localhost permission_practice]# chmod +t backup/
 [root@localhost permission_practice]# ls -l 
 drwxr-xr-t. 5 root root 48 Jul 21 16:48 backup
 ```
 ```
-[root@localhost permission_practice]# chmod ugo+s company/departments/hr/salaries.txt 
-[root@localhost permission_practice]# ls -l company/departments/hr
+[root@localhost permission_practice]# chmod ugo+s company/departments/hr/salaries.txt && \
+> ls -l company/departments/hr/
 -rwSr-Sr--. 1 root root 25 Jul 21 16:48 salaries.txt
 ```
 ### 3-2. 숫자 표기법으로 복합 권한 설정
