@@ -272,8 +272,6 @@ drwxr-xr-x. 2 root developers 60 Jul 21 16:48 daily
 ```
 [root@localhost permission_practice]# umask
 0022
-```
-```
 [root@localhost permission_practice]# umask 027
 [root@localhost permission_practice]# umask
 0027
@@ -291,11 +289,11 @@ drwxr-x---. 2 root root   6 Jul 21 18:01 hello
 0022
 ```
 ```
-[root@localhost ~]# mkdir fdfd
-[root@localhost ~]# touch yes.txt
+[root@localhost ~]# mkdir hellow022
+[root@localhost ~]# touch wassup022.txt
 [root@localhost ~]# ls -l
-drwxr-xr-x. 2 root root   6 Jul 21 18:02 fdfd
--rw-r--r--. 1 root root   0 Jul 21 18:02 yes.txt
+drwxr-xr-x. 2 root root   6 Jul 21 18:02 hellow022
+-rw-r--r--. 1 root root   0 Jul 21 18:02 wassup022.txt
 ```
 ### 6-2. 사용자별 umask 커스터마이징
 - 각 사용자별로 다른 umask 값을 설정하세요
@@ -304,22 +302,22 @@ drwxr-xr-x. 2 root root   6 Jul 21 18:02 fdfd
 - eve: umask 002 (그룹 협업 친화적 설정)
 ```
 [root@localhost ~]# echo "umask 022" | sudo tee -a /home/alice/.bashrc
-umask 022
-[root@localhost ~]# sudo su - alice
-[alice@localhost ~]$ umask
+umask 022                   # root에서 alice 사용자의 .bashrc에 umask 022 설정 추가
+[root@localhost ~]# sudo su - alice                 # alice 사용자로 로그인
+[alice@localhost ~]$ umask                  # alice 사용자의 umask 값 확인
 0022
 ```
 ```
 [root@localhost ~]# echo "umask 077" | sudo tee -a /home/diana/.bashrc
-umask 077
-[root@localhost ~]# su - diana 
-[diana@localhost ~]$ umask
+umask 077                   # root에서 diana 사용자의 ./bashrc에 umask 077 설정 추가
+[root@localhost ~]# sudo su - diana                  # diana 사용자로 로그인
+[diana@localhost ~]$ umask                  # diana 사용자의 umask 값 확인
 0077
 ```
 ```
 [root@localhost ~]# echo "umask 002" | sudo tee -a /home/eve/.bashrc
 umask 002
-[root@localhost ~]# su - eve
+[root@localhost ~]# sudo su - eve
 [eve@localhost ~]$ umask
 0002
 ```
