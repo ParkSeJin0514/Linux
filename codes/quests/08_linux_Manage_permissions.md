@@ -412,8 +412,9 @@ d---rwx---. 2 root  managers    64 Jul 21 16:48 finance
 ```
 ```
 [root@localhost permission_practice]# sudo chown alice:developers company/projects/
+[root@localhost permission_practice]# chmod 070 company/projects/
 [root@localhost permission_practice]# ls -l company/
-drwxr-xr-x. 5 alice developers 57 Jul 21 22:08 projects
+d---rwx---. 5 alice developers 57 Jul 21 22:08 projects
 ```
 ### 9-2. 임시 작업 공간 설정
 - 임시 작업을 위한 공간을 다음과 같이 설정하세요
@@ -429,6 +430,8 @@ drwxrwxrwt. 2 root root    6 Jul 21 23:27 temp
 ```
 [root@localhost permission_practice]# sudo crontab -e
 # vi
+# 0 > "0분에" | 3 > "오전3시에" | * > "매일" | * > "매주" | * > "매월"
+# /tmp/temp > "이 디렉토리 아래에서 검색" | -type f > "파일만 찾음" | -mtime +7 > "마지막 수정일이 7일 이상 지난 파일" | -exec rm -f {} \; > "찾은 파일을 rm -f로 강제 삭제 ({}는 해당 파일 이름)
 0 3 * * * find /tmp/temp -type f -mtime +7 -exec rm -f {} \;
 # 작성 후 나가는 법
 ESC > :wq > ENTER
