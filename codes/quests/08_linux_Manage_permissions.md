@@ -441,22 +441,18 @@ ESC > :wq > ENTER
 - backup/monthly/ : root만 접근 가능
 모든 백업 파일은 생성 후 읽기 전용으로 자동 변경
 ```
-[root@localhost permission_practice]# chown root:developers backup/
-[root@localhost permission_practice]# ls -l
-d---rwxr-t. 5 root developers 48 Jul 21 16:48 backup
-```
-[root@localhost permission_practice]# chgrp developers backup/daily/
-[root@localhost permission_practice]# chmod 740 backup/daily/
-[root@localhost permission_practice]# ls -l
-d---r----t. 5 root root 48 Jul 21 16:48 backup
-```
-[root@localhost permission_practice]# chgrp managers backup/weekly/
-[root@localhost permission_practice]# chmod 040 backup/weekly/
+[root@localhost permission_practice]# chmod 464 backup/daily/
 [root@localhost permission_practice]# ls -l backup/
-d---r----x. 2 root managers    6 Jul 21 16:48 weekly
+dr--rw-r--. 2 root developers 60 Jul 21 22:08 daily
 ```
 ```
-[root@localhost permission_practice]# chown root:root backup/monthly/
+[root@localhost permission_practice]# sudo chgrp managers backup/weekly/
+[root@localhost permission_practice]# chmod 070 backup/weekly/
 [root@localhost permission_practice]# ls -l backup/
-dr--------. 2 root root        6 Jul 21 16:48 monthly
+d---rwx---. 2 root managers    6 Jul 21 22:08 weekly
+```
+```
+[root@localhost permission_practice]# chmod 700 backup/monthly/
+[root@localhost permission_practice]# ls -l backup/
+drwx------. 2 root root        6 Jul 21 22:08 monthly
 ```
