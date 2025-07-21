@@ -333,15 +333,15 @@ umask 002
 -rw-r-xr--. 1 root developers 37 Jul 21 16:48 deploy.sh
 ```
 ```
-[root@localhost permission_practice]# chown alice:diana shared/tools/backup.sh 
-[root@localhost permission_practice]# chmod 750 shared/tools/backup.sh 
+[root@localhost permission_practice]# sudo chown alice:diana shared/tools/backup.sh 
+[root@localhost permission_practice]# chmod 654 shared/tools/backup.sh 
 [root@localhost permission_practice]# ls -l shared/tools/
--rwxr-x---. 1 alice diana      33 Jul 21 16:48 backup.sh
+-rw-r-xr--. 1 alice diana      33 Jul 21 16:48 backup.sh
 ```
 ```
 [root@localhost permission_practice]# chmod 700 company/departments/dev/build.sh 
 [root@localhost permission_practice]# ls -l company/departments/dev/
--rwx------. 1 eve  developers 32 Jul 21 16:48 build.sh
+-rwx------. 1 alice  developers 32 Jul 21 16:48 build.sh
 ```
 ### 8-2. 시스템 스크립트 보안 설정
 - 시스템 관리용 스크립트를 다음과 같이 설정하세요
@@ -349,15 +349,34 @@ umask 002
 - 일반 사용자가 sudo 없이 실행할 수 있도록 SetUID 설정
 - 실행 로그를 남기도록 권한 설정
 ```
-[root@localhost permission_practice]# touch system_check.sh
-[root@localhost permission_practice]# nano system_check.sh 
-[root@localhost permission_practice]# chmod 4755 system_check.sh 
-[root@localhost permission_practice]# touch system_check.log
-[root@localhost permission_practice]# chown root:root system_check.log
-[root@localhost permission_practice]# chmod 622 system_check.log
+[root@localhost permission_practice]# nano system_check.sh
+# nano
+date >> ./system_check.log
+uptime >> ./system_check.log
+df -h >> ./system_check.log
+```
+```
+[root@localhost permission_practice]# chmod o+s system_check.sh         # SETUID 권한 부여
 [root@localhost permission_practice]# ls -l
--rw--w--w-. 1 root root  0 Jul 21 18:20 system_check.log
--rwsr-xr-x. 1 root root 98 Jul 21 18:19 system_check.sh
+-rwxr-xr-t. 1 root root  1 Jul 21 23:04 system_check.sh
+```
+```
+[root@localhost permission_practice]# ./system_check.sh                 # system_check.sh 실행
+[root@localhost permission_practice]# ls -l
+-rw-r--r--. 1 root root 900 Jul 21 23:12 system_check.log               # 실행 후 생긴 system_check.log
+```
+```
+[root@localhost permission_practice]# cat system_check.log              # system_check.log 내용 출력
+Mon Jul 21 11:10:16 PM KST 2025
+ 23:10:16 up  1:03,  2 users,  load average: 0.00, 0.02, 0.00
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             4.0M     0  4.0M   0% /dev
+tmpfs                870M     0  870M   0% /dev/shm
+tmpfs                348M  9.4M  339M   3% /run
+/dev/mapper/rl-root   17G  5.6G   12G  33% /
+/dev/nvme0n1p1       960M  366M  595M  39% /boot
+tmpfs                174M  124K  174M   1% /run/user/1000
+---
 ```
 ## 📁 9. 디렉터리별 접근 제어
 ### 9-1. 계층적 접근 제어
