@@ -77,7 +77,7 @@ echo "실습 환경이 구성되었습니다!"
 tree permission_practice
 ```
 
-## 1. 기본 권한 설정
+## 📁 1. 기본 권한 설정
 ### 1-1. 개발팀 파일 권한 설정
 - 개발팀(developers 그룹) 관련 파일들의 권한을 다음과 같이 설정하세요
 - company/departments/dev/ 디렉터리 : 개발팀만 접근 가능, 소유자와 그룹은 읽기/쓰기/실행 가능
@@ -134,7 +134,7 @@ drwxr-xr-x. 2 alice root 65 Jul 21 16:48 alice
 -rw-------. 1 bob  root 0 Jul 21 16:48 config.json
 ```
 
-## 2. 그룹 기반 권한 관리
+## 📁 2. 그룹 기반 권한 관리
 ### 2-1. 공유 리소스 접근 권한
 - shared/ 디렉터리의 권한을 다음과 같이 설정하세요
 - shared/documents/ : developers와 managers 그룹 모두 읽기 가능, 소유자만 쓰기 가능
@@ -173,7 +173,7 @@ drwxr-xr-x. 2 root developers 55 Jul 21 16:48 project_a
 [root@localhost permission_practice]# ls -l company/projects/
 drwxr-xr-x. 2 alice bob        67 Jul 21 16:48 project_b
 ```
-## 3. 고급 권한 설정
+## 📁 3. 고급 권한 설정
 ### 3-1. 특수 권한 적용
 - 다음 파일들에 특수 권한을 설정하세요
 - shared/tools/deploy.sh : SetGID 설정으로 developers 그룹 권한으로 실행
@@ -216,7 +216,7 @@ drwxr-xr-t. 5 root root 48 Jul 21 16:48 backup
 -rw-r-----. 1 root root 0 Jul 21 16:48 system.log
 ```
 
-## 4. 소유권 및 그룹 관리
+## 📁 4. 소유권 및 그룹 관리
 ### 4-1. 소유권 변경
 - 다음과 같이 파일과 디렉터리의 소유권을 변경하세요
 - company/departments/dev/ 디렉터리와 모든 하위 파일 : alice 소유, developers 그룹
@@ -251,7 +251,7 @@ drwxr-xr-x. 5 root managers 57 Jul 21 16:48 projects
 [root@localhost permission_practice]# ls -l backup/
 drwxr-xr-x. 2 root developers 60 Jul 21 16:48 daily
 ```
-## 6. umask 및 기본 권한 관리
+## 📁 6. umask 및 기본 권한 관리
 ### 6-1. umask 설정 및 테스트
 - 현재 시스템의 umask 값을 확인하고 다음과 같이 변경한 후 테스트하세요 : umask 값을 027로 설정
 - 새 파일과 디렉터리를 생성하여 기본 권한 확인
@@ -310,7 +310,7 @@ umask 002
 [eve@localhost ~]$ umask
 0002
 ```
-## 8. 실행 권한 및 스크립트 관리
+## 📁 8. 실행 권한 및 스크립트 관리
 ### 8-1. 스크립트 실행 환경 설정
 - 다음 스크립트 파일들의 실행 권한을 적절히 설정하세요
 - shared/tools/deploy.sh : developers 그룹만 실행 가능
@@ -348,7 +348,7 @@ umask 002
 -rw--w--w-. 1 root root  0 Jul 21 18:20 system_check.log
 -rwsr-xr-x. 1 root root 98 Jul 21 18:19 system_check.sh
 ```
-## 9. 디렉터리별 접근 제어
+## 📁 9. 디렉터리별 접근 제어
 ### 9-1. 계층적 접근 제어
 - 다음과 같은 계층적 접근 권한을 설정하세요
 - company/ : 모든 직원이 읽기 가능
@@ -397,7 +397,7 @@ drwxr-xr-x. 5 alice alice_bob 57 Jul 21 16:48 projects
 # 작성 후 나가는 법
 ESC > :wq > ENTER
 ```
-## 10. 백업 및 아카이브 권한 관리
+## 📁 10. 백업 및 아카이브 권한 관리
 ### 10-1. 백업 파일 보안
 - 백업 관련 파일들의 보안을 다음과 같이 설정하세요
 - backup/daily/ : developers 그룹이 백업 생성 가능, 읽기 전용
