@@ -163,14 +163,15 @@ drw-r-xr--. 2 root developers 40 Jul 21 16:48 tools
 - company/projects/project_a/ : developers 그룹 구성원들이 협업할 수 있도록 설정
 - company/projects/project_b/ : alice와 bob만 접근 가능하도록 설정
 ```
-[root@localhost permission_practice]# chgrp developers company/projects/project_a
+[root@localhost permission_practice]# sudo chgrp developers company/projects/project_a
 [root@localhost permission_practice]# ls -l company/projects/
 drwxr-xr-x. 2 root developers 55 Jul 21 16:48 project_a
 ```
 ```
-[root@localhost permission_practice]# chown alice:bob company/projects/project_b
-[root@localhost permission_practice]# ls -l company/projects/
-drwxr-xr-x. 2 alice bob        67 Jul 21 16:48 project_b
+[root@localhost permission_practice]# chown alice:bob company/projects/project_b && \
+> chmod 770 company/projects/project_b && \
+> ls -l company/projects/
+drwxrwx---. 2 alice bob        67 Jul 21 22:08 project_b
 ```
 ## 📁 3. 고급 권한 설정
 ### 3-1. 특수 권한 적용
