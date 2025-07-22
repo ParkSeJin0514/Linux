@@ -312,7 +312,7 @@ echo -e "192.168.1.10 - - [15/Jan/2024:10:30:00] GET /index.html 200\n192.168.1.
 12-2. 시스템 사용자 분석
 # /etc/passwd 파일에서 실제 사용자(홈 디렉토리가 /home으로 시작)만 추출하여 사용자명 순으로 정렬하세요
 # 명령어를 작성하세요
-[parksejin@localhost text_processing_practice]$ grep "^.*/home/" /etc/passwd | cut -d":" -f1 | sort
+[parksejin@localhost text_processing_practice]$ cut -d':' -f1,6 /etc/passwd | grep '/home/' | cut -d':' -f1 | sort
 alice
 alice_bob
 bob
@@ -320,7 +320,6 @@ charlie
 diana
 eve
 parksejin
-
 
 12-3. 설정 파일 백업 및 비교
 # employees.txt 파일을 백업하고, 원본에서 한 줄을 수정한 후 차이점을 확인하세요
