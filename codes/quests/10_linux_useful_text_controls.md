@@ -230,7 +230,6 @@ Lisa
 ```
 [parksejin@localhost text_processing_practice]$ cat employees.txt | sort -t":" -k2 -rn | cut -d":" -f1 | head -n1
 Tom
-Tom
 ```
 ## 📁 문제 10: 리다이렉션 활용 (중급)
 ### 10-1. fruits.txt 파일을 알파벳 역순으로 정렬하여 fruits_reverse.txt 파일에 저장하세요
