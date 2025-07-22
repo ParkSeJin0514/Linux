@@ -12,3 +12,4 @@
 - Practice More nano Practice Commands : [07.18 리눅스 나노 복습](codes/quests/07_linux_practice_problems.md)
 - Practice Manage permissions Commands : [07.21 리눅스 권한](codes/quests/08_linux_Manage_permissions.md)
 - Parctice Profiles env Commands : [07.22 리눅스 프로필](codes/quests/09_linux_profiles_env.md)
+- Practice useful text controls Commands : [07.22 리눅스 컨트롤](codes/quests/10_useful_text_controls.md)
