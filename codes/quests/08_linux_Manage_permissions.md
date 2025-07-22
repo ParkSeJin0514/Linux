@@ -301,15 +301,15 @@ drwxr-xr-x. 2 root root   6 Jul 21 18:02 hellow022
 - diana: umask 077 (보안 강화 설정)
 - eve: umask 002 (그룹 협업 친화적 설정)
 ```
-[root@localhost ~]# echo "umask 022" | sudo tee -a /home/alice/.bashrc
-umask 022                   # root에서 alice 사용자의 .bashrc에 umask 022 설정 추가
+[root@localhost ~]# echo "umask 022" | sudo tee -a /home/alice/.bashrc                   # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
+umask 022                   # root에서 alice 사용자의 .bashrc에 umask 022 설정 추가 (-a)append
 [root@localhost ~]# sudo su - alice                 # alice 사용자로 로그인
 [alice@localhost ~]$ umask                  # alice 사용자의 umask 값 확인
 0022
 ```
 ```
-[root@localhost ~]# echo "umask 077" | sudo tee -a /home/diana/.bashrc
-umask 077                   # root에서 diana 사용자의 ./bashrc에 umask 077 설정 추가
+[root@localhost ~]# echo "umask 077" | sudo tee -a /home/diana/.bashrc                   # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
+umask 077                   # root에서 diana 사용자의 ./bashrc에 umask 077 설정 추가 (-a)append
 [root@localhost ~]# sudo su - diana                  # diana 사용자로 로그인
 [diana@localhost ~]$ umask                  # diana 사용자의 umask 값 확인
 0077
