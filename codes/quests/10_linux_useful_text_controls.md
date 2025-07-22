@@ -223,8 +223,10 @@ Lisa
 ```
 ### 9-3. scores.txt 파일에서 150점 이상인 점수의 개수를 확인하세요
 ```
-[parksejin@localhost text_processing_practice]$ cat scores.txt | sort -rn | head -n 3 | wc -l
+[parksejin@localhost text_processing_practice]$ cat scores.txt | awk '$1 >= 150' | wc -l
 3
+# awk : 텍스트 처리 도구 (줄 단위로 분석)
+# $1 : 각 줄의 첫 번째 필드 (기본 구분자는 공백 또는 탭)
 ```
 ### 9-4. employees.txt 파일에서 나이를 기준으로 정렬한 후 가장 나이가 많은 직원의 이름을 출력하세요
 ```
@@ -276,6 +278,10 @@ Lisa:28:Seoul:Analyst
 ```
 [parksejin@localhost text_processing_practice]$ cat scores.txt | sort -rn | head -n 4 | awk '{sum += $1} END {print sum "/4"}' | bc -l
 187.5
+# sum += $1 : 각 줄의 첫 번재 필드 검색해서 sum에 더함
+# END {print sum "/4"} : 모든 입력을 받고 sum / 4 후 출력
+# bc : 리눅스 계산기 명령어
+# -l : 소수점 연산을 위한 옵션
 ```
 ### 11-4. 모든 .txt 파일에서 가장 많이 사용된 단어 상위 5개를 찾으세요
 ```
