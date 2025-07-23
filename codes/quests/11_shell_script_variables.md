@@ -35,6 +35,7 @@ Hello Linux Learners!
 ### 💡 힌트
 - $1, $2를 사용하여 외부 인자를 받을 수 있습니다
 
+### 📂 실행 결과
 ```
 [parksejin@localhost Downloads]$ nano create_file.sh
 ```
