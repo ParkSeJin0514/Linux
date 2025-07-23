@@ -37,7 +37,7 @@ Line 2
 Last line B
 EOF
 ```
-## 샘플 파일 5: people.txt (이메일 처리용)
+## 샘플 파일 5 : people.txt (이메일 처리용)
 ```
 cat > people.txt <<EOF
 Alice <alice@gmail.com>
