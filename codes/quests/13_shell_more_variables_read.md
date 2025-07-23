@@ -68,10 +68,8 @@ Word count in sample.txt: 123
 ```
 nano wordcount.sh
 # nano
-read -p "Enter filename : " V_text
-touch "$V_text"
-echo "Word count in $V_text : "
-cat $V_text | sort | wc -l
+read -p "Enter filename : " V_TEST
+echo "Word count in $V_TEST : " && cat $V_TEST | sort | wc -l  
 ```
 ```
 [parksejin@localhost env]$ bash wordcount.sh 
@@ -100,15 +98,15 @@ nano count_keyword.sh
 ```
 ```
 # nano
-V_FIND_ERROR="$1"
-V_FIND_FILE="$2"
+V_FIND_WORD="$1"
+V_FIND_FILE1="$2"
 
-count=$(cat "$V_FIND_FILE" | grep "$V_FIND_ERROR" | cut -d" " -f3 | wc -w)
-echo "The word '$V_FIND_ERROR' appeared $count times"
+count=$(cat $V_FIND_FILE1 | cut -d" " -f 3 | grep -i "ERROR" | wc -w)
+echo "The word '$V_FIND_WORD' appeared $count times." 
 ```
 ```
-[parksejin@localhost env]$ bash count_keyword.sh ERROR logfile.txt
-The word 'ERROR' appeared 3 times
+[parksejin@localhost env]$ bash count_keyword.sh error logfile.txt 
+The word 'error' appeared 3 times.
 ```
 ## ✅ [문제 3] 고유 단어 목록 만들기
 ### 문제 설명
@@ -130,16 +128,19 @@ Unique words saved to: article_unique.txt
 nano unique_words.sh
 ```
 ```
-read -p "Enter input file : " V_ARTICLE
-read -p "Unique words saved to : " V_ARTICLE_UNIQUE
-cat $V_ARTICLE | cut -d" " -f1-10 | tr  " " "\n" | sort | uniq -c | sort -r > $V_ARTICLE_UNIQUE 
+read -p "Enter input file : " V_FIND_FILE2 
+read -p "Unique words saved to : " V_FIND_FILE3
+
+cat $V_FIND_FILE2 | tr " " "\n" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -r > $V_FIND_FILE3
 ```
 ```
 [parksejin@localhost env]$ bash unique_words.sh 
 Enter input file : article.txt
 Unique words saved to : article_unique.txt
+[parksejin@localhost env]$ ls -l
+-rw-r--r--. 1 parksejin parksejin 264 Jul 23 22:31 article_unique.txt
 [parksejin@localhost env]$ cat article_unique.txt 
-      3 Linux
+      3 linux
       2 is
       2 for
       2 and
@@ -151,7 +152,7 @@ Unique words saved to : article_unique.txt
       1 popular
       1 operating
       1 open-source
-      1 Many
+      1 many
       1 embedded
       1 developers
       1 automation.
@@ -177,21 +178,22 @@ nano compare_lastline.sh
 ```
 ```
 # nano
-V_FIND_FILE1="$1"
-V_FIND_FILE2="$2"
+V_FIND_FILE4="$1"
+V_FIND_FILE5="$2"
 
-echo "Result : " 
-if diff -u <(tail -n 1 "$V_FIND_FILE1") <(tail -n 1 "$V_FIND_FILE2") ; then
-  echo "Same"
+echo "Result : "
+if diff -u <(tail -n 1 $V_FIND_FILE4) <(tail -n 1 $V_FIND_FILE5); then
+        echo "Same"
 else
-  echo "Different"
+    	echo "Different"
 fi
+# diff -u <(tail -n 1 $V_FIND_FILE4) : <(command) 프로세스 서브스티튜션 / 이 부분은 임시 파일처럼 작동하며 명령어의 출력을 diff 명령어의 입력으로 전달
 ```
 ```
-[parksejin@localhost env]$ bash compare_lastline.sh file1.txt file2.txt
+[parksejin@localhost env]$ bash compare_lastsline.sh file1.txt file2.txt
 Result : 
---- /dev/fd/63	2025-07-23 18:55:41.490012774 +0900
-+++ /dev/fd/62	2025-07-23 18:55:41.491012775 +0900
+--- /dev/fd/63	2025-07-23 22:38:37.576869091 +0900
++++ /dev/fd/62	2025-07-23 22:38:37.576869091 +0900
 @@ -1 +1 @@
 -Last line A
 +Last line B
@@ -222,11 +224,12 @@ nano email_domains.sh
 ```
 ```
 # nano
-read -p "Enter file name : " V_PEOPLE1
-echo "Output : " && cat $V_PEOPLE1 | cut -d"@" -f 2 | tr ">" " " | sort -rn | uniq -c
+read -p "Enter file name : " V_FIND_FILE6
+
+echo "Output : " && cat $V_FIND_FILE6 | cut -d"@" -f 2 | tr ">" " " | sort | uniq -c | sort -rn
 ```
 ```
-[parksejin@localhost env]$ bash email_domains.sh 
+[parksejin@localhost env]$ bash email_domains.sh
 Enter file name : people.txt
 Output : 
       3 naver.com 
@@ -240,7 +243,7 @@ Output :
 ### 요구사항
 - read 사용
 - 변수에 파일명 저장
-- tr, sort, uniq -c, sort -nr 조합
+- tr, cut, uniq -c, sort -nr 조합
 - 파이프라인 필수
 
 ### 🔧 예시 실행
@@ -260,9 +263,9 @@ nano word_freq_sort.sh
 ```
 ```
 # nano
-read -p "Enter file to process : " V_FILE3
+read -p "Enter file to process : " V_FIND_FILE6
 
-echo "Output : " && tr -cs '[:alnum:]' '\n' < $V_FILE3 | sort | tr '[:upper:]' '[:lower:]' | uniq -c | sort -rn
+echo "Output : " && cat $V_FIND_FILE6 | tr -sc '[:alnum:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn
 ```
 ```
 [parksejin@localhost env]$ bash word_freq_sort.sh 
