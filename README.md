@@ -14,3 +14,4 @@
 - Parctice Profiles env Commands : [07.22 리눅스 프로필](codes/quests/09_linux_profiles_env.md)
 - Practice Useful Text Controls Commands : [07.22 리눅스 컨트롤](codes/quests/10_linux_useful_text_controls.md)
 - Practice Shell Script Variables Commands : [07.23 리눅스 쉘 스크립트](codes/quests/11_shell_script_variables.md)
+- Practice Shell Variables Read Commands : [07.23 리눅스 READ](codes/quests/12_shell_variables_read.md)
