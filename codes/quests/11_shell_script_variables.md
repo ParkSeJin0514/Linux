@@ -41,15 +41,16 @@ Hello Linux Learners!
 ```
 ```
 # nano
-ake_text="$1"
+make_text="$1"
 input_variable="$2"
 
-touch "$1"
-echo "$2" > "$1"
-echo "Completed!"
+touch "$make_text"
+echo "$input_variable" > "$make_text"
+echo "$make_text is created Completed!"
 ```
 ```
-[parksejin@localhost Downloads]$ source 80_1_shell_variables_aguments.sh welcome.txt "Hello Linux Learners" 
+[parksejin@localhost Downloads]$ source 80_1_shell_variables_aguments.sh welcome.txt "Hello Linux Learners"
+welcome.txt is created Completed!
 [parksejin@localhost Downloads]$ cat welcome.txt 
 Hello Linux Learners
 [parksejin@localhost Downloads]$ ls
