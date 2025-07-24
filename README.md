@@ -1,4 +1,6 @@
-# Linux
+# 💾 Linux
+- **Bespin Global Cloud Engineer**
+- **Rocky 기반으로 실습한 내용** 
 ## Quests
 - Practice Commands : [07.15 리눅스 기본 명령어](codes/quests/01_basic_linux_commands.md)
 - Practice More Commands : [07.16 리눅스 복습](codes/quests/02_basic_more_linux_commands.md)
