@@ -2,17 +2,17 @@
 - 실습 환경 설정
 - 먼저 다음 명령어들을 실행하여 실습 환경을 구성하세요
 ## 실습 디렉터리 생성
-```
+```shell
 # root 안에서 실행
 su -
 ```
-```
+```shell
 mkdir permission_practice
 cd permission_practice
 ```
 
 ## 사용자 및 그룹 생성 (관리자 권한 필요)
-```
+```shell
 sudo useradd -m -s /bin/bash alice
 sudo useradd -m -s /bin/bash bob
 sudo useradd -m -s /bin/bash charlie
@@ -21,13 +21,13 @@ sudo useradd -m -s /bin/bash eve
 ```
 
 ## 그룹 생성
-```
+```shell
 sudo groupadd developers
 sudo groupadd managers
 ```
 
 ## 사용자를 그룹에 추가
-```
+```shell
 sudo usermod -a -G developers alice
 sudo usermod -a -G developers bob
 sudo usermod -a -G developers charlie
@@ -37,12 +37,12 @@ sudo usermod -a -G managers alice
 ```
 
 ## 복잡한 디렉터리 구조 생성
-```
+```shell
 mkdir -p {company/{departments/{dev,hr,finance,marketing},projects/{project_a,project_b,project_c}},shared/{documents,resources,tools},private/{alice,bob,charlie,diana,eve},backup/{daily,weekly,monthly},logs/{2023/{01..12},2024/{01..12}}}
 ```
 
 ## 다양한 파일 생성
-```
+```shell
 touch company/departments/dev/{main.py,test.py,config.py,README.md}
 touch company/departments/hr/{employees.xlsx,contracts.pdf,policies.txt}
 touch company/departments/finance/{budget.xlsx,reports.pdf,invoices.csv}
@@ -57,7 +57,7 @@ touch logs/2024/06/{access.log,error.log,debug.log,system.log}
 ```
 
 ## 실행 가능한 스크립트 파일 생성
-```
+```shell
 echo '#!/bin/bash' > shared/tools/deploy.sh
 echo 'echo "Deployment script"' >> shared/tools/deploy.sh
 echo '#!/bin/bash' > shared/tools/backup.sh
@@ -67,12 +67,12 @@ echo 'echo "Build script"' >> company/departments/dev/build.sh
 ```
 
 ## 설정 파일 생성
-```
+```shell
 echo "database_host=localhost" > company/departments/dev/database.conf
 echo "api_key=secret123" > company/departments/dev/api.conf
 echo "salary_data=confidential" > company/departments/hr/salaries.txt
 ```
-```
+```shell
 echo "실습 환경이 구성되었습니다!"
 tree permission_practice
 ```

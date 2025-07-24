@@ -10,7 +10,7 @@
 - 파일 생성 성공 메시지를 출력해야 합니다
 
 ### 📄 파일명 예시
-```
+```shell
 create_file.sh
 ```
 ### ✍️ 수강생이 작성해야 할 동작 흐름
@@ -19,7 +19,7 @@ create_file.sh
 - 파일 생성 및 내용 기록
 - 완료 메시지 출력
 ### ✅ 실행 예제
-```
+```shell
 $ ./create_file.sh welcome.txt "Hello Linux Learners!"
 ```
 ### 📂 결과
@@ -36,10 +36,10 @@ Hello Linux Learners!
 - $1, $2를 사용하여 외부 인자를 받을 수 있습니다
 
 ### 📂 실행 결과
-```
+```shell
 [parksejin@localhost Downloads]$ nano create_file.sh
 ```
-```
+```shell
 # nano
 make_text="$1"
 input_variable="$2"
@@ -48,7 +48,7 @@ touch "$make_text"
 echo "$input_variable" > "$make_text"
 echo "$make_text is created Completed!"
 ```
-```
+```shell
 [parksejin@localhost Downloads]$ source 80_1_shell_variables_aguments.sh welcome.txt "Hello Linux Learners"
 welcome.txt is created Completed!
 [parksejin@localhost Downloads]$ cat welcome.txt 

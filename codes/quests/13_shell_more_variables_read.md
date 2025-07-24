@@ -1,7 +1,7 @@
 # 🧪 Shell Script 실습 문제 세트 : "변수 중심 텍스트 분석"
 
 ## 📁 디렉토리 및 파일 구조 생성 스크립트
-```
+```shell
 mkdir -p ~/shell_practice/env
 cd ~/shell_practice/env
 ```
@@ -14,7 +14,7 @@ Many developers use Linux for programming and automation.
 EOF
 ```
 ## 샘플 파일 2 : logfile.txt (grep 실습용)
-```
+```shell
 cat > logfile.txt <<EOF
 [2025-07-23 14:00] INFO Start processing
 [2025-07-23 14:01] ERROR Failed to load file
@@ -24,7 +24,7 @@ cat > logfile.txt <<EOF
 EOF
 ```
 ## 샘플 파일 3, 4 : file1.txt, file2.txt (tail, diff 실습용)
-```
+```shell
 cat > file1.txt <<EOF
 Line 1
 Line 2
@@ -38,7 +38,7 @@ Last line B
 EOF
 ```
 ## 샘플 파일 5 : people.txt (이메일 처리용)
-```
+```shell
 cat > people.txt <<EOF
 Alice <alice@gmail.com>
 Bob <bob@naver.com>
@@ -59,19 +59,19 @@ EOF
 - 변수에 파일명 저장
 - wc 명령어 사용
 ### 🔧 예시 실행
-```
+```shell
 bash wordcount.sh
 Enter filename: sample.txt
 Word count in sample.txt: 123
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano wordcount.sh
 # nano
 read -p "Enter filename : " V_TEST
 echo "Word count in $V_TEST : " && cat $V_TEST | sort | wc -l  
 ```
-```
+```shell
 [parksejin@localhost env]$ bash wordcount.sh 
 Enter filename : sample.txt
 Word count in sample.txt : 
@@ -88,15 +88,15 @@ Word count in sample.txt :
 - grep, wc, 변수 사용
 
 ### 🔧 예시 실행
-```
+```shell
 bash count_keyword.sh error logfile.txt
 The word 'error' appeared 5 times.
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano count_keyword.sh
 ```
-```
+```shell
 # nano
 V_FIND_WORD="$1"
 V_FIND_FILE1="$2"
@@ -104,7 +104,7 @@ V_FIND_FILE1="$2"
 count=$(cat $V_FIND_FILE1 | cut -d" " -f 3 | grep -i "ERROR" | wc -w)
 echo "The word '$V_FIND_WORD' appeared $count times." 
 ```
-```
+```shell
 [parksejin@localhost env]$ bash count_keyword.sh error logfile.txt 
 The word 'error' appeared 3 times.
 ```
@@ -118,22 +118,22 @@ The word 'error' appeared 3 times.
 - 변수 활용 및 리다이렉션 사용
 
 ### 🔧 예시 실행
-```
+```shell
 bash unique_words.sh
 Enter input file: article.txt
 Unique words saved to: article_unique.txt
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano unique_words.sh
 ```
-```
+```shell
 read -p "Enter input file : " V_FIND_FILE2 
 read -p "Unique words saved to : " V_FIND_FILE3
 
 cat $V_FIND_FILE2 | tr " " "\n" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -r > $V_FIND_FILE3
 ```
-```
+```shell
 [parksejin@localhost env]$ bash unique_words.sh 
 Enter input file : article.txt
 Unique words saved to : article_unique.txt
@@ -168,15 +168,15 @@ Unique words saved to : article_unique.txt
 - 임시 변수에 각 줄 저장
 
 ### 🔧 예시 실행
-```
+```shell
 bash compare_lastline.sh file1.txt file2.txt
 Result: Different
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano compare_lastline.sh
 ```
-```
+```shell
 # nano
 V_FIND_FILE4="$1"
 V_FIND_FILE5="$2"
@@ -189,7 +189,7 @@ else
 fi
 # diff -u <(tail -n 1 $V_FIND_FILE4) : <(command) 프로세스 서브스티튜션 / 이 부분은 임시 파일처럼 작동하며 명령어의 출력을 diff 명령어의 입력으로 전달
 ```
-```
+```shell
 [parksejin@localhost env]$ bash compare_lastsline.sh file1.txt file2.txt
 Result : 
 --- /dev/fd/63	2025-07-23 22:38:37.576869091 +0900
@@ -209,7 +209,7 @@ Different
 - 결과를 정렬된 상태로 출력
 
 ### 🔧 예시 실행
-```
+```shell
 bash email_domains.sh
 Enter file name: people.txt
 
@@ -219,16 +219,16 @@ Output:
 2 daum.net
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano email_domains.sh
 ```
-```
+```shell
 # nano
 read -p "Enter file name : " V_FIND_FILE6
 
 echo "Output : " && cat $V_FIND_FILE6 | cut -d"@" -f 2 | tr ">" " " | sort | uniq -c | sort -rn
 ```
-```
+```shell
 [parksejin@localhost env]$ bash email_domains.sh
 Enter file name : people.txt
 Output : 
@@ -247,7 +247,7 @@ Output :
 - 파이프라인 필수
 
 ### 🔧 예시 실행
-```
+```shell
 bash word_freq_sort.sh
 Enter file to process: document.txt
 
@@ -258,16 +258,16 @@ Output:
 ...
 ```
 ### 🔧 답안 작성
-```
+```shell
 nano word_freq_sort.sh
 ```
-```
+```shell
 # nano
 read -p "Enter file to process : " V_FIND_FILE6
 
 echo "Output : " && cat $V_FIND_FILE6 | tr -sc '[:alnum:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn
 ```
-```
+```shell
 [parksejin@localhost env]$ bash word_freq_sort.sh 
 Enter file to process : people.txt
 Output : 

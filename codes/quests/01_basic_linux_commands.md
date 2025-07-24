@@ -5,7 +5,7 @@
 ### 문제 1-1. 현재 위치 확인
 
 - 현재 작업 중인 디렉터리의 경로를 확인하세요
-```
+```shell
 PS C:\Develops\Quests> pwd
 ```
 ### 문제 1-2. 폴더 구조 만들기
@@ -13,37 +13,37 @@ PS C:\Develops\Quests> pwd
 - 다음 폴더 구조를 생성하세요
 
 powershell_practice/
-```
+```shell
 PS C:\Develops\Quests> mkdir powershell_practice
-```
+```shell
 ├── documents/
-```
+```shell
 PS C:\Develops\Quests\powershell_practice> mkdir documents
-```
+```shell
 ├── images/ 
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> mkdir images
-```
+```shell
 ├── backup/
 ```
 PS C:\Develops\Quests\powershell_practice\documents\images> mkdir backup
-```
+```shell
 └── temp/
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images\backup>mkdir temp
 ```
 ### 문제 1-3. 폴더 탐색
 
 - documents 폴더로 이동하세요
-```
+```shell
 PS PS C:\Develops\Quests\powershell_practice\documents\images\backup>cd C:\Develops\Quests\powershell_practice\documents
 ```
 - 현재 폴더의 내용을 확인하세요 (비어있을 것입니다)
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> ls
 ```
 - 다시 상위 폴더로 돌아가세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images> cd C:\Develops\Quests\powershell_practice
 ```
 
@@ -52,12 +52,12 @@ PS C:\Develops\Quests\powershell_practice\documents\images> cd C:\Develops\Quest
 ### 문제 2-1. 텍스트 파일 생성
 
 - documents 폴더에 hello.txt 파일을 생성하고 "Hello PowerShell!" 내용을 입력하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> "Hello PowerShell" > hello.txt
 ```
 
 - images 폴더에 photo1.jpg, photo2.png 빈 파일을 생성하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images> echo "" > photo1.jpg
 PS C:\Develops\Quests\powershell_practice\documents\images> echo "" > photo2.png
 PS C:\Develops\Quests\powershell_practice\documents\images> ls
@@ -67,12 +67,12 @@ PS C:\Develops\Quests\powershell_practice\documents\images> ls
 ### 문제 2-2. 파일 내용 확인
 
 - hello.txt 파일의 내용을 출력하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> cat hello.txt
 Hello PowerShell
 ```
 - 현재 폴더의 모든 파일과 폴더 목록을 자세히 확인하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> ls
 
 
@@ -89,7 +89,7 @@ d-----      2025-07-15   오후 3:45                images
 
 - documents/hello.txt 파일을 backup 폴더에 복사하세요
 - images 폴더의 모든 파일을 backup 폴더에 복사하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> cp C:\Develops\Quests\powershell_practice\documents\hello.txt C:\Develops\Quests\powershell_practice\documents\images\backup
 ```
 
@@ -98,31 +98,31 @@ PS C:\Develops\Quests\powershell_practice\documents> cp C:\Develops\Quests\power
 ### 문제 3-1. 파일 이동
 
 - temp 폴더에 test.txt 파일을 생성하세요
-```
+```shell
 PS C:\Develops\Quests> mkdir temp
 PS C:\Develops\Quests> cd temp
 PS C:\Develops\Quests\temp> "" > test.txt
 ```
 - 이 파일을 documents 폴더로 이동하세요
-```
+```shell
 PS C:\Develops\Quests\temp> mv C:\Develops\Quests\temp\test.txt C:\Develops\Quests\powershell_practice\documents
 ```
 
 ### 문제 3-2. 파일 이름 변경
 
 - documents/test.txt 파일의 이름을 moved_file.txt로 변경하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> mv test.txt moved_file.txt
 ```
 - images/photo1.jpg 파일의 이름을 picture1.jpg로 변경하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images> mv photo1.jpg picture1.jpg
 ```
 
 ### 문제 3-3. 폴더 이름 변경
 
 - temp 폴더의 이름을 temporary로 변경하세요
-```
+```shell
 PS C:\Develops\Quests> mv temp temporary
 PS C:\Develops\Quests> ls
 
@@ -141,22 +141,22 @@ d-----      2025-07-15   오후 3:53                temporary
 ### 문제 4-1. 개별 파일 삭제
 
 - documents/moved_file.txt 파일을 삭제하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents> rm moved_file.txt
 ```
 - images/photo2.png 파일을 삭제하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images> rm photo2.png
 ```
 
 ### 문제 4-2. 폴더 삭제
 
 - temporary 폴더를 삭제하세요 (비어있는 폴더)
-```
+```shell
 PS C:\Develops\Quests> rm temporary
 ```
 - backup 폴더와 그 안의 모든 내용을 삭제하세요
-```
+```shell
 PS C:\Develops\Quests\powershell_practice\documents\images> rm backup
 
 확인
@@ -184,50 +184,50 @@ PS C:\Develops\Quests\powershell_practice\documents\images>
 - 다음과 같은 프로젝트 구조를 생성하세요
 
 my_project/
-```
+```shell
 mkdir my_project
 ```
 ├── src/
-```
+```shell
 PS C:\Develops\Quests> cd my_project
 PS C:\Develops\Quests\my_project> mkdir src
 ```
 │   └── main.py (내용 : "print('Hello World')")
-```
+```shell
 PS C:\Develops\Quests\my_project\src> "print('Hello World')" > main.py
 PS C:\Develops\Quests\my_project\src> cat main.py
 print('Hello World')
 ```
 ├── docs/
-```
+```shell
 PS C:\Develops\Quests\my_project> mkdir docs
 ```
 │   └── readme.txt (내용 : "This is my project")
-```
+```shell
 PS C:\Develops\Quests\my_project\docs> "This is my project" > readme.txt
 PS C:\Develops\Quests\my_project\docs> cat readme.txt
 This is my project
 ```
 ├── tests/
-```
+```shell
 PS C:\Develops\Quests\my_project> mkdir tests
 ```
 └── build/
-```
+```shell
 PS C:\Develops\Quests\my_project> mkdir build
 ```
 ### 문제 5-2. 파일 정리
 
 - src/main.py 파일을 build 폴더에 복사하세요
-```
+```shell
 cp C:\Develops\Quests\my_project\src\main.py C:\Develops\Quests\my_project\build
 ```
 - docs/readme.txt 파일을 project_info.txt로 이름을 변경하세요
-```
+```shell
 PS C:\Develops\Quests\my_project\docs> mv C:\Develops\Quests\my_project\docs\readme.txt C:\Develops\Quests\my_project\docs\project_info.txt
 ```
 - tests 폴더를 삭제하세요.
-```
+```shell
 PS C:\Develops\Quests\my_project> rm tests
 ```
 
@@ -235,7 +235,7 @@ PS C:\Develops\Quests\my_project> rm tests
 
 - my_project 폴더의 모든 하위 내용을 재귀적으로 확인하세요
 - 각 폴더로 이동하여 파일 내용을 확인하세요
-```
+```shell
 PS C:\Develops\Quests> tree
 폴더 PATH의 목록입니다.
 볼륨 일련 번호는 52B6-33C5입니다.
