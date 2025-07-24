@@ -301,17 +301,17 @@ drwxr-xr-x. 2 root root   6 Jul 21 18:02 hellow022
 - diana: umask 077 (보안 강화 설정)
 - eve: umask 002 (그룹 협업 친화적 설정)
 ```
-[root@localhost ~]# echo "umask 022" | sudo tee -a /home/alice/.bashrc                   # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
-umask 022                   # root에서 alice 사용자의 .bashrc에 umask 022 설정 추가 (-a)append
-[root@localhost ~]# sudo su - alice                 # alice 사용자로 로그인
-[alice@localhost ~]$ umask                  # alice 사용자의 umask 값 확인
+[root@localhost ~]# echo "umask 022" | sudo tee -a /home/alice/.bashrc            # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
+umask 022                                                                         # root에서 alice 사용자의 .bashrc에 umask 022 설정 추가 (-a)append
+[root@localhost ~]# sudo su - alice                                               # alice 사용자로 로그인
+[alice@localhost ~]$ umask                                                        # alice 사용자의 umask 값 확인
 0022
 ```
 ```
-[root@localhost ~]# echo "umask 077" | sudo tee -a /home/diana/.bashrc                   # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
-umask 077                   # root에서 diana 사용자의 ./bashrc에 umask 077 설정 추가 (-a)append
-[root@localhost ~]# sudo su - diana                  # diana 사용자로 로그인
-[diana@localhost ~]$ umask                  # diana 사용자의 umask 값 확인
+[root@localhost ~]# echo "umask 077" | sudo tee -a /home/diana/.bashrc            # tee : 입력받은 내용을 화면에 출력하면서 동시에 파일로 저장
+umask 077                                                                         # root에서 diana 사용자의 ./bashrc에 umask 077 설정 추가 (-a)append
+[root@localhost ~]# sudo su - diana                                               # diana 사용자로 로그인
+[diana@localhost ~]$ umask                                                        # diana 사용자의 umask 값 확인
 0077
 ```
 ```
@@ -356,17 +356,17 @@ uptime >> ./system_check.log
 df -h >> ./system_check.log
 ```
 ```
-[root@localhost permission_practice]# chmod o+s system_check.sh         # SETUID 권한 부여
+[root@localhost permission_practice]# chmod o+s system_check.sh                   # SETUID 권한 부여
 [root@localhost permission_practice]# ls -l
 -rwxr-xr-t. 1 root root  1 Jul 21 23:04 system_check.sh
 ```
 ```
-[root@localhost permission_practice]# ./system_check.sh                 # system_check.sh 실행
+[root@localhost permission_practice]# ./system_check.sh                           # system_check.sh 실행
 [root@localhost permission_practice]# ls -l
--rw-r--r--. 1 root root 900 Jul 21 23:12 system_check.log               # 실행 후 생긴 system_check.log
+-rw-r--r--. 1 root root 900 Jul 21 23:12 system_check.log                         # 실행 후 생긴 system_check.log
 ```
 ```
-[root@localhost permission_practice]# cat system_check.log              # system_check.log 내용 출력
+[root@localhost permission_practice]# cat system_check.log                        # system_check.log 내용 출력
 Mon Jul 21 11:10:16 PM KST 2025
  23:10:16 up  1:03,  2 users,  load average: 0.00, 0.02, 0.00
 Filesystem           Size  Used Avail Use% Mounted on
