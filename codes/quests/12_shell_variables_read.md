@@ -1,6 +1,7 @@
 ```shell
 [parksejin@localhost Downloads]$ nano 80_2_shell_variables_read.sh
-# nano
+```
+```shell
 V_FIRST_INPUT="$1"
 read -p "read input : " V_READ_INPUT
 echo "$V_FIRST_INPUT, $V_READ_INPUT"
